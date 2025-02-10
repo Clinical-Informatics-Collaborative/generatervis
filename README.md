@@ -11,11 +11,11 @@ coverage](https://codecov.io/gh/Clinical-Informatics-Collaborative/generatervis/
 [![test-coverage](https://github.com/Clinical-Informatics-Collaborative/generatervis/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/Clinical-Informatics-Collaborative/generatervis/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
-The goal of generatervis is to …
+The goal of `generatervis` is to …
 
 ## Installation
 
-You can install the development version of generatervis from
+You can install the development version of `generatervis` from
 [GitHub](https://github.com/) with:
 
 ``` r

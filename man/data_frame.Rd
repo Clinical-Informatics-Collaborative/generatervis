@@ -4,13 +4,9 @@
 \alias{data_frame}
 \title{Title}
 \usage{
-data_frame(nrow, ncol, x, y, z)
+data_frame(x, y, z)
 }
 \arguments{
-\item{nrow}{An interger}
-
-\item{ncol}{An integer}
-
 \item{x}{Column 1 of data frame}
 
 \item{y}{Column 2 of data frame}
@@ -29,5 +25,5 @@ ncol <- 3
 x <- c("a","p")
 y <- c(12.56,38)
 z <- c("abc","pqr")
-data_frame(nrow, ncol, x, y, z)
+data_frame(x, y, z)
 }
