@@ -10,7 +10,7 @@
 coverage](https://codecov.io/gh/Clinical-Informatics-Collaborative/generatervis/graph/badge.svg)](https://app.codecov.io/gh/Clinical-Informatics-Collaborative/generatervis)
 <!-- badges: end -->
 
-The goal of `generatervis` is to …
+The goal of `generatervis` is to generate and visualise Clinical data.
 
 ## Installation
 
@@ -29,6 +29,7 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(generatervis)
 ## basic example code
+# To define a data frame, use the following steps:
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
