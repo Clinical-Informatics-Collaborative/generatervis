@@ -11,9 +11,7 @@ coverage](https://codecov.io/gh/Clinical-Informatics-Collaborative/generatervis/
 
 <!-- badges: end -->
 
-The goal of `generatervis` is to synthesise clinical data, create a workflow for it, and to visualise the data.
-
-It is crucial to understand that **all data used in this repository, including the FASTQ files and clinical data, are either artificially generated or modified for testing and educational purposes only**. They do not represent any real patient or biological data.
+The goal of `generatervis` is to generate and visualise Clinical data.
 
 ## Installation
 
@@ -34,6 +32,7 @@ This is a basic example which shows you how to solve a common problem:
 1.  Define all the vectors that should be the columns of the data frame.
     Note: Each vector should be of the same length. Suppose `x`, `y`,
     and `z` are three columns for a data frame.
+
 2.  Combine the columns to form a data frame with the command
     `data_frame(a,b,c)`.
 
