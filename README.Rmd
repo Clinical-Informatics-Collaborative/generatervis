@@ -39,6 +39,7 @@ This is a basic example which shows you how to solve a common problem:
 # To define a data frame, use the following steps:
 
 1.  Define all the vectors that should be the columns of the data frame. Note: Each vector should be of the same length. Suppose `x`, `y`, and `z` are three columns for a data frame.
+
 2.  Combine the columns to form a data frame with the command `data_frame(a,b,c)`.
 
 ```{r example}
@@ -50,19 +51,3 @@ z <- c("x1","x2","x3","x4")
 df <- data_frame(x,y,z)
 print(df)
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-# plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

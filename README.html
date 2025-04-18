@@ -643,12 +643,12 @@ problem:</p>
 <h1 id="to-define-a-data-frame-use-the-following-steps">To define a data
 frame, use the following steps:</h1>
 <ol style="list-style-type: decimal">
-<li>Define all the vectors that should be the columns of the data frame.
-Note: Each vector should be of the same length. Suppose <code>x</code>,
-<code>y</code>, and <code>z</code> are three columns for a data
-frame.</li>
-<li>Combine the columns to form a data frame with the command
-<code>data_frame(a,b,c)</code>.</li>
+<li><p>Define all the vectors that should be the columns of the data
+frame. Note: Each vector should be of the same length. Suppose
+<code>x</code>, <code>y</code>, and <code>z</code> are three columns for
+a data frame.</p></li>
+<li><p>Combine the columns to form a data frame with the command
+<code>data_frame(a,b,c)</code>.</p></li>
 </ol>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(generatervis)</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="do">## basic example code</span></span>
@@ -662,22 +662,6 @@ frame.</li>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; 2 5 place_2 x2</span></span>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; 3 9 place_3 x3</span></span>
 <span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; 4 7 place_4 x4</span></span></code></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just
-<code>README.md</code>? You can include R chunks like so:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">summary</span>(cars)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt;      speed           dist       </span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;  Median :15.0   Median : 36.00  </span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></span></code></pre></div>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to
-keep <code>README.md</code> up-to-date.
-<code>devtools::build_readme()</code> is handy for this.</p>
-<p>You can also embed plots, for example:</p>
-<p>In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.</p>
 
 </body>
 </html>
