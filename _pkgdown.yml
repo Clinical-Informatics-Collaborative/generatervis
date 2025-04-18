@@ -1,12 +1,4 @@
 url: https://clinical-informatics-collaborative.github.io/generatervis/
 template:
   bootstrap: 5
-  light-switch: true
-navbar:
-  structure:
-    right: [search, github, lightswitch]
-  components:
-    github:
-      icon: fa-github
-      href: https://github.com/Clinical-Informatics-Collaborative/generatervis
-      aria-label: GitHub
+
