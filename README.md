@@ -11,7 +11,9 @@ coverage](https://codecov.io/gh/Clinical-Informatics-Collaborative/generatervis/
 
 <!-- badges: end -->
 
-The goal of `generatervis` is to generate and visualise Clinical data.
+The goal of `generatervis` is to synthesise clinical data, create a workflow for it, and to visualise the data.
+
+It is crucial to understand that **all data used in this repository, including the FASTQ files and clinical data, are either artificially generated or modified for testing and educational purposes only**. They do not represent any real patient or biological data.
 
 ## Installation
 
