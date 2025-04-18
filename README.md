@@ -11,7 +11,9 @@ coverage](https://codecov.io/gh/Clinical-Informatics-Collaborative/generatervis/
 [![test-coverage](https://github.com/Clinical-Informatics-Collaborative/generatervis/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/Clinical-Informatics-Collaborative/generatervis/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
-The goal of `generatervis` is to …
+The goal of `generatervis` is to synthesise clinical data, create a workflow for it, and to visualise the data.
+
+It is crucial to understand that **all data used in this repository, including the FASTQ files and clinical data, are either artificially generated or modified for testing and educational purposes only**. They do not represent any real patient or biological data.
 
 ## Installation
 
