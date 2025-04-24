@@ -3,4 +3,5 @@
 export(clean)
 export(create_file)
 export(data_frame)
+importFrom(LocaTT,write.fastq)
 importFrom(utils,write.csv)
