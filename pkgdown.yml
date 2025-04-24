@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-04-24T12:51Z
+last_built: 2025-04-24T23:44Z
 urls:
   reference: https://clinical-informatics-collaborative.github.io/generatervis/reference
   article: https://clinical-informatics-collaborative.github.io/generatervis/articles
