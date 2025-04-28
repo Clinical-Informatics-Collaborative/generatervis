@@ -2,3 +2,4 @@
 
 export(clean)
 export(data_frame)
+export(rreads)
