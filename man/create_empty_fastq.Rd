@@ -14,7 +14,7 @@ create_empty_fastq(patient_id, output_dir = ".")
 \description{
 This function creates an empty FASTQ file with the specified patient ID.
 The file will contain a single entry with the patient ID as the sequence identifier.
-The sequence and quality scores will be empty.
+The sequence and quality scores will be empty
 }
 \details{
 The function constructs a FASTQ file with the following format:
@@ -24,11 +24,10 @@ The function constructs a FASTQ file with the following format:
  \item Line 3: Separator (e.g., +)
  \item Line 4: Empty quality scores
  }
-
- @examples
+}
+\examples{
  # Create an empty FASTQ file for patient ID "patient_123"
- #  create_empty_fastq("patient_123")
+ create_empty_fastq("patient_123")
  # Create an empty FASTQ file for patient ID "patient_456" in a specific directory
- #  create_empty_fastq("patient_456", output_dir = "path/to/directory")
- @export
+ create_empty_fastq("patient_456", output_dir = ".")
 }
