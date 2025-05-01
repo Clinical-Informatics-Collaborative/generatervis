@@ -11,7 +11,7 @@ rreads(patient_id, n, read_length = 8)
 
 \item{n}{An integer specifying the number of reads to generate.}
 
-\item{read_length}{An integer specifying the length of each read. Default is 8.}
+\item{read_length}{An integer specifying the length of each read. Default is 8. It should be multiple of 4.}
 }
 \value{
 A character vector containing the generated FASTQ lines.

@@ -1,0 +1,16 @@
+@test_patient_read1
+GGCCCGAC
++
+IIIIIIII
+@test_patient_read2
+GATAGTTT
++
+IIIIIIII
+@test_patient_read1
+TGAGTTGT
++
+IIIIIIII
+@test_patient_read2
+TATTTGAC
++
+IIIIIIII

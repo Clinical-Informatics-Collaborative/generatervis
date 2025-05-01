@@ -3,4 +3,5 @@
 export(clean)
 export(create_empty_fastq)
 export(data_frame)
+export(fill_fastq)
 export(rreads)
