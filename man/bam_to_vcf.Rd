@@ -31,6 +31,7 @@ The function writes the VCF file to the specified path.
 \examples{
 # Convert BAM-like data to VCF format
 # bam_to_vcf("output.vcf")
-bam_to_vcf("output.vcf")
+patient_id <- "patient_123"
+bam_to_vcf(patient_id = patient_id, vcf_file ="output.vcf")
 
 }

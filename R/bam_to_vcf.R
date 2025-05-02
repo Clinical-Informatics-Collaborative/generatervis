@@ -25,7 +25,8 @@
 #' @export
 #'
 #' @examples
-#' bam_to_vcf("output.vcf")
+#' patient_id <- "patient_123"
+#' bam_to_vcf(patient_id = patient_id, vcf_file ="output.vcf")
 #'
 bam_to_vcf <- function(patient_id, vcf_file = "dummy.vcf") {
 
