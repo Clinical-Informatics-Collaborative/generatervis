@@ -21,32 +21,90 @@ You can install the development version of `generatervis` from
 ``` r
 # install.packages("pak")
 pak::pak("Clinical-Informatics-Collaborative/generatervis")
+#> 
+#> ℹ No downloads are needed
+#> ✔ 1 pkg: kept 1 [2.8s]
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+# To create an empty raw (.fastq) file, use the following steps:
 
-# To define a data frame, use the following steps:
+1.  Define the patient ID for which you want to create an empty FASTQ
+    file.
 
-1.  Define all the vectors that should be the columns of the data frame.
-    Note: Each vector should be of the same length. Suppose `x`, `y`,
-    and `z` are three columns for a data frame.
-
-2.  Combine the columns to form a data frame with the command
-    `data_frame(a,b,c)`.
+2.1 When output directory is not specified, the `.fastq` file will be
+saved in the current working directory.
 
 ``` r
-library(generatervis)
-## basic example code
-x <- c(3,5,9,7)
-y <- c("place_1","place_2","place_3","place_4")
-z <- c("x1","x2","x3","x4")
-df <- data_frame(x,y,z)
-print(df)
-#>   x       y  z
-#> 1 3 place_1 x1
-#> 2 5 place_2 x2
-#> 3 9 place_3 x3
-#> 4 7 place_4 x4
+# Create an empty FASTQ file for patient ID "patient_123"
+  generatervis::create_empty_fastq("patient_123")
+#> Empty FASTQ file created at: ./patient_123.fastq
+```
+
+2.2 When output directory is specified, the `.fastq` file will be saved
+in the specified directory.
+
+``` r
+# Create an empty FASTQ file for patient ID "patient_456" in a specific directory
+  generatervis::create_empty_fastq("patient_456", output_dir = ".")
+#> Empty FASTQ file created at: ./patient_456.fastq
+```
+
+# To generate a random sample of `reads` for a Whole Genome Sequencing (WGS) dataset, use the following steps:
+
+1.  Define the patient ID for which you want to create an empty FASTQ
+    file.
+2.  Specify the number of reads you want to generate.
+3.  Optionally, specify the read length (default is 8). It should be
+    multiple of 4.
+4.  The generated reads will be saved in a `.fastq` file in the current
+    working directory.
+
+Example 1: When read length is not specified, it will default to 8.
+
+``` r
+# Generate 5 random reads for patient ID "patient_123"
+ generatervis::rreads("patient_123", n = 5)
+#>  [1] "@patient_123_read1" "CAACTTGT"           "+"                 
+#>  [4] "IIIIIIII"           "@patient_123_read2" "ACCAGGCT"          
+#>  [7] "+"                  "IIIIIIII"           "@patient_123_read3"
+#> [10] "GCCAGTCG"           "+"                  "IIIIIIII"          
+#> [13] "@patient_123_read4" "GGGACCGG"           "+"                 
+#> [16] "IIIIIIII"           "@patient_123_read5" "GTAAAAGT"          
+#> [19] "+"                  "IIIIIIII"
+```
+
+Example 2: When read length is specified, it will be set to the
+specified value.
+
+``` r
+# Generate 5 random reads for patient ID "patient_456" with a read length of 12
+ generatervis::rreads("patient_456", n = 5, read_length = 12)
+#>  [1] "@patient_456_read1" "AAAGTCAAACCC"       "+"                 
+#>  [4] "IIIIIIIIIIII"       "@patient_456_read2" "AAGTTATTAGAT"      
+#>  [7] "+"                  "IIIIIIIIIIII"       "@patient_456_read3"
+#> [10] "GTCCACGACAGG"       "+"                  "IIIIIIIIIIII"      
+#> [13] "@patient_456_read4" "CCGGCACATAGT"       "+"                 
+#> [16] "IIIIIIIIIIII"       "@patient_456_read5" "GCCGCGCGCCAG"      
+#> [19] "+"                  "IIIIIIIIIIII"
+```
+
+# To fill a FASTQ file with random reads
+
+1.  Define the patient ID for which you want to fill the FASTQ file.
+2.  Specify the number of reads you want to generate.
+3.  Optionally, specify the read length (default is 8). It should be
+    multiple of 4.
+4.  The generated reads will be saved in a `.fastq` file in the current
+    working directory by default. If another directory is specified, the
+    file will be saved there.
+
+Example: When read length is not specified, it will default to 8.
+
+``` r
+# Fill a FASTQ file for patient ID "patient_123" with 2 reads of length 8
+ generatervis::fill_fastq("patient_123",output_dir = ".", n = 2, read_length = 8)
+#> File already exists. Appending reads to the existing file.
+#> Populated ./patient_123.fastq with 2 reads.
 ```
