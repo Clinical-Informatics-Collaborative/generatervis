@@ -57,34 +57,80 @@
 <p>You can install the development version of <code>generatervis</code> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
-<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"Clinical-Informatics-Collaborative/generatervis"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"Clinical-Informatics-Collaborative/generatervis"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ℹ No downloads are needed</span></span>
+<span><span class="co">#&gt; ✔ 1 pkg: kept 1 [2.8s]</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
 </div>
 </div>
 <div class="section level1">
-<h1 id="to-define-a-data-frame-use-the-following-steps">To define a data frame, use the following steps:<a class="anchor" aria-label="anchor" href="#to-define-a-data-frame-use-the-following-steps"></a>
+<h1 id="to-create-an-empty-raw-fastq-file-use-the-following-steps">To create an empty raw (.fastq) file, use the following steps:<a class="anchor" aria-label="anchor" href="#to-create-an-empty-raw-fastq-file-use-the-following-steps"></a>
 </h1>
 <ol style="list-style-type: decimal">
-<li><p>Define all the vectors that should be the columns of the data frame. Note: Each vector should be of the same length. Suppose <code>x</code>, <code>y</code>, and <code>z</code> are three columns for a data frame.</p></li>
-<li><p>Combine the columns to form a data frame with the command <code>data_frame(a,b,c)</code>.</p></li>
+<li>Define the patient ID for which you want to create an empty FASTQ file.</li>
 </ol>
+<p>2.1 When output directory is not specified, the <code>.fastq</code> file will be saved in the current working directory.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://clinical-informatics-collaborative.github.io/generatervis/">generatervis</a></span><span class="op">)</span></span>
-<span><span class="co">## basic example code</span></span>
-<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">9</span>,<span class="fl">7</span><span class="op">)</span></span>
-<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"place_1"</span>,<span class="st">"place_2"</span>,<span class="st">"place_3"</span>,<span class="st">"place_4"</span><span class="op">)</span></span>
-<span><span class="va">z</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x1"</span>,<span class="st">"x2"</span>,<span class="st">"x3"</span>,<span class="st">"x4"</span><span class="op">)</span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/data_frame.html">data_frame</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span>,<span class="va">z</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   x       y  z</span></span>
-<span><span class="co">#&gt; 1 3 place_1 x1</span></span>
-<span><span class="co">#&gt; 2 5 place_2 x2</span></span>
-<span><span class="co">#&gt; 3 9 place_3 x3</span></span>
-<span><span class="co">#&gt; 4 7 place_4 x4</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Create an empty FASTQ file for patient ID "patient_123"</span></span>
+<span>  <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/create_empty_fastq.html">create_empty_fastq</a></span><span class="op">(</span><span class="st">"patient_123"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Empty FASTQ file created at: ./patient_123.fastq</span></span></code></pre></div>
+<p>2.2 When output directory is specified, the <code>.fastq</code> file will be saved in the specified directory.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Create an empty FASTQ file for patient ID "patient_456" in a specific directory</span></span>
+<span>  <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/create_empty_fastq.html">create_empty_fastq</a></span><span class="op">(</span><span class="st">"patient_456"</span>, output_dir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Empty FASTQ file created at: ./patient_456.fastq</span></span></code></pre></div>
+</div>
+<div class="section level1">
+<h1 id="to-generate-a-random-sample-of-reads-for-a-whole-genome-sequencing-wgs-dataset-use-the-following-steps">To generate a random sample of <code>reads</code> for a Whole Genome Sequencing (WGS) dataset, use the following steps:<a class="anchor" aria-label="anchor" href="#to-generate-a-random-sample-of-reads-for-a-whole-genome-sequencing-wgs-dataset-use-the-following-steps"></a>
+</h1>
+<ol style="list-style-type: decimal">
+<li>Define the patient ID for which you want to create an empty FASTQ file.</li>
+<li>Specify the number of reads you want to generate.</li>
+<li>Optionally, specify the read length (default is 8). It should be multiple of 4.</li>
+<li>The generated reads will be saved in a <code>.fastq</code> file in the current working directory.</li>
+</ol>
+<p>Example 1: When read length is not specified, it will default to 8.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Generate 5 random reads for patient ID "patient_123"</span></span>
+<span> <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/rreads.html">rreads</a></span><span class="op">(</span><span class="st">"patient_123"</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "@patient_123_read1" "CAACTTGT"           "+"                 </span></span>
+<span><span class="co">#&gt;  [4] "IIIIIIII"           "@patient_123_read2" "ACCAGGCT"          </span></span>
+<span><span class="co">#&gt;  [7] "+"                  "IIIIIIII"           "@patient_123_read3"</span></span>
+<span><span class="co">#&gt; [10] "GCCAGTCG"           "+"                  "IIIIIIII"          </span></span>
+<span><span class="co">#&gt; [13] "@patient_123_read4" "GGGACCGG"           "+"                 </span></span>
+<span><span class="co">#&gt; [16] "IIIIIIII"           "@patient_123_read5" "GTAAAAGT"          </span></span>
+<span><span class="co">#&gt; [19] "+"                  "IIIIIIII"</span></span></code></pre></div>
+<p>Example 2: When read length is specified, it will be set to the specified value.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Generate 5 random reads for patient ID "patient_456" with a read length of 12</span></span>
+<span> <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/rreads.html">rreads</a></span><span class="op">(</span><span class="st">"patient_456"</span>, n <span class="op">=</span> <span class="fl">5</span>, read_length <span class="op">=</span> <span class="fl">12</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "@patient_456_read1" "AAAGTCAAACCC"       "+"                 </span></span>
+<span><span class="co">#&gt;  [4] "IIIIIIIIIIII"       "@patient_456_read2" "AAGTTATTAGAT"      </span></span>
+<span><span class="co">#&gt;  [7] "+"                  "IIIIIIIIIIII"       "@patient_456_read3"</span></span>
+<span><span class="co">#&gt; [10] "GTCCACGACAGG"       "+"                  "IIIIIIIIIIII"      </span></span>
+<span><span class="co">#&gt; [13] "@patient_456_read4" "CCGGCACATAGT"       "+"                 </span></span>
+<span><span class="co">#&gt; [16] "IIIIIIIIIIII"       "@patient_456_read5" "GCCGCGCGCCAG"      </span></span>
+<span><span class="co">#&gt; [19] "+"                  "IIIIIIIIIIII"</span></span></code></pre></div>
+</div>
+<div class="section level1">
+<h1 id="to-fill-a-fastq-file-with-random-reads">To fill a FASTQ file with random reads<a class="anchor" aria-label="anchor" href="#to-fill-a-fastq-file-with-random-reads"></a>
+</h1>
+<ol style="list-style-type: decimal">
+<li>Define the patient ID for which you want to fill the FASTQ file.</li>
+<li>Specify the number of reads you want to generate.</li>
+<li>Optionally, specify the read length (default is 8). It should be multiple of 4.</li>
+<li>The generated reads will be saved in a <code>.fastq</code> file in the current working directory by default. If another directory is specified, the file will be saved there.</li>
+</ol>
+<p>Example: When read length is not specified, it will default to 8.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Fill a FASTQ file for patient ID "patient_123" with 2 reads of length 8</span></span>
+<span> <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/fill_fastq.html">fill_fastq</a></span><span class="op">(</span><span class="st">"patient_123"</span>,output_dir <span class="op">=</span> <span class="st">"."</span>, n <span class="op">=</span> <span class="fl">2</span>, read_length <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span>
+<span><span class="co">#&gt; File already exists. Appending reads to the existing file.</span></span>
+<span><span class="co">#&gt; Populated ./patient_123.fastq with 2 reads.</span></span></code></pre></div>
 </div>
 
   </main><aside class="col-md-3"><div class="license">
