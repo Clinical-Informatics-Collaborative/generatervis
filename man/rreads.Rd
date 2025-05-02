@@ -11,7 +11,7 @@ rreads(patient_id, n, read_length = 8)
 
 \item{n}{An integer specifying the number of reads to generate.}
 
-\item{read_length}{An integer specifying the length of each read. Default is 8.}
+\item{read_length}{An integer specifying the length of each read. Default is 8. It should be multiple of 4.}
 }
 \value{
 A character vector containing the generated FASTQ lines.
@@ -36,6 +36,6 @@ The output is formatted as a FASTQ file, which consists of four lines per read:
 \examples{
 # Generate 5 random reads for patient ID "patient_123"
 rreads("patient_123", n = 5)
-# Generate 10 random reads for patient ID "patient_456" with a read length of 10
-rreads("patient_456", n = 10, read_length = 10)
+# Generate 10 random reads for patient ID "patient_456" with a read length of 12
+rreads("patient_456", n = 10, read_length = 12)
 }

@@ -1,3 +1,5 @@
+
+
 #' Function to generate a random sample of reads in FASTQ format
 #'
 #' This function generates a specified number of random reads in FASTQ format.
@@ -5,13 +7,13 @@
 #'
 #' @param patient_id A character string representing the patient ID.
 #' @param n An integer specifying the number of reads to generate.
-#' @param read_length An integer specifying the length of each read. Default is 8.
+#' @param read_length An integer specifying the length of each read. Default is 8. It should be multiple of 4.
 #' @return A character vector containing the generated FASTQ lines.
 #' @examples
 #' # Generate 5 random reads for patient ID "patient_123"
 #' rreads("patient_123", n = 5)
-#' # Generate 10 random reads for patient ID "patient_456" with a read length of 10
-#' rreads("patient_456", n = 10, read_length = 10)
+#' # Generate 10 random reads for patient ID "patient_456" with a read length of 12
+#' rreads("patient_456", n = 10, read_length = 12)
 #' @export
 #'
 #' @details
