@@ -7,11 +7,11 @@ test_that("fill_fastq() works", {
   n <- 2
   read_length <- 8
 
-  # Call the function to fill the FASTQ file
-  fill_fastq(patient_id, output_dir, n, read_length)
-
   # Construct the expected file name
   file_name <- file.path(output_dir, paste0(patient_id, ".fastq"))
+
+  # Call the function to fill the FASTQ file
+  fill_fastq(patient_id, output_dir, n, read_length)
 
   # Check if the file exists
   expect_true(file.exists(file_name))

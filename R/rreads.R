@@ -1,3 +1,5 @@
+
+
 #' Function to generate a random sample of reads in FASTQ format
 #'
 #' This function generates a specified number of random reads in FASTQ format.
