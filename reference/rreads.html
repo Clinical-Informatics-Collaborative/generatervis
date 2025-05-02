@@ -79,28 +79,28 @@ The output is formatted as a FASTQ file, which consists of four lines per read:<
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Generate 5 random reads for patient ID "patient_123"</span></span></span>
 <span class="r-in"><span><span class="fu">rreads</span><span class="op">(</span><span class="st">"patient_123"</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "@patient_123_read1" "GATTGGTG"           "+"                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "IIIIIIII"           "@patient_123_read2" "AACATTGG"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "@patient_123_read1" "CCTGATGG"           "+"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "IIIIIIII"           "@patient_123_read2" "CATATGTC"          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "+"                  "IIIIIIII"           "@patient_123_read3"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "CCTGATGG"           "+"                  "IIIIIIII"          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "@patient_123_read4" "CATATGTC"           "+"                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "IIIIIIII"           "@patient_123_read5" "ATACCTGA"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "ATACCTGA"           "+"                  "IIIIIIII"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "@patient_123_read4" "TTGTAAGT"           "+"                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "IIIIIIII"           "@patient_123_read5" "ACACCGCC"          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [19] "+"                  "IIIIIIII"          </span>
 <span class="r-in"><span><span class="co"># Generate 10 random reads for patient ID "patient_456" with a read length of 12</span></span></span>
 <span class="r-in"><span><span class="fu">rreads</span><span class="op">(</span><span class="st">"patient_456"</span>, n <span class="op">=</span> <span class="fl">10</span>, read_length <span class="op">=</span> <span class="fl">12</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "@patient_456_read1"  "TTGTAAGTACAC"        "+"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "IIIIIIIIIIII"        "@patient_456_read2"  "CGCCCGTGTGTG"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "@patient_456_read1"  "CGTGTGTGTCTA"        "+"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "IIIIIIIIIIII"        "@patient_456_read2"  "GTTGATCCACAG"       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "+"                   "IIIIIIIIIIII"        "@patient_456_read3" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "TCTAGTTGATCC"        "+"                   "IIIIIIIIIIII"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "@patient_456_read4"  "ACAGCTATTTGC"        "+"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "IIIIIIIIIIII"        "@patient_456_read5"  "TCTTAGGCAAAA"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "CTATTTGCTCTT"        "+"                   "IIIIIIIIIIII"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "@patient_456_read4"  "AGGCAAAATAAA"        "+"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "IIIIIIIIIIII"        "@patient_456_read5"  "TCAGGACGGCTC"       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [19] "+"                   "IIIIIIIIIIII"        "@patient_456_read6" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [22] "TAAATCAGGACG"        "+"                   "IIIIIIIIIIII"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "@patient_456_read7"  "GCTCAGAGATAA"        "+"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [28] "IIIIIIIIIIII"        "@patient_456_read8"  "AAGATGCGCTAT"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [22] "AGAGATAAAAGA"        "+"                   "IIIIIIIIIIII"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [25] "@patient_456_read7"  "TGCGCTATTGCG"        "+"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [28] "IIIIIIIIIIII"        "@patient_456_read8"  "CATCACGACAGG"       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [31] "+"                   "IIIIIIIIIIII"        "@patient_456_read9" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [34] "TGCGCATCACGA"        "+"                   "IIIIIIIIIIII"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [37] "@patient_456_read10" "CAGGATGCGGTC"        "+"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [34] "ATGCGGTCTACC"        "+"                   "IIIIIIIIIIII"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [37] "@patient_456_read10" "GTCTATATGCAT"        "+"                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [40] "IIIIIIIIIIII"       </span>
 </code></pre></div>
     </div>
