@@ -5,7 +5,6 @@
 #' @param output_dir A character string specifying the directory where the plot file will be saved. Default is the current working directory.
 #' @param n An integer specifying the number of reads to plot.
 #' @param read_length An integer specifying the length of each read. Default is 8.
-#' @param file_name A character string specifying the name of the FASTQ file.
 #'
 #' @return NULL
 #' @examples

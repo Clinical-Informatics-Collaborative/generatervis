@@ -14,8 +14,6 @@ fastq_plot(patient_id, output_dir = ".", n, read_length)
 \item{n}{An integer specifying the number of reads to plot.}
 
 \item{read_length}{An integer specifying the length of each read. Default is 8.}
-
-\item{file_name}{A character string specifying the name of the FASTQ file.}
 }
 \description{
 Function to plot FASTQ sequences in a grid format
