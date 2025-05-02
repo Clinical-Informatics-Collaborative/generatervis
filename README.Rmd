@@ -34,7 +34,7 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 
 ## Example
 
-# To create an empty raw (.fastq) file, use the following steps:
+### To create an empty raw (.fastq) file, use the following steps:
 
 1. Define the patient ID for which you want to create an empty FASTQ file. 
 
@@ -51,7 +51,7 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
   generatervis::create_empty_fastq("patient_456", output_dir = ".")
 ```
 
-# To generate a random sample of `reads` for a Whole Genome Sequencing (WGS) dataset, use the following steps:
+### To generate a random sample of `reads` for a Whole Genome Sequencing (WGS) dataset, use the following steps:
 
 1. Define the patient ID for which you want to create an empty FASTQ file. 
 2. Specify the number of reads you want to generate.
@@ -70,7 +70,7 @@ Example 2: When read length is specified, it will be set to the specified value.
  generatervis::rreads("patient_456", n = 5, read_length = 12)
 ```
 
-# To fill a FASTQ file with random reads
+### To fill a FASTQ file with random reads
 
 1. Define the patient ID for which you want to fill the FASTQ file.
 2. Specify the number of reads you want to generate.
@@ -83,3 +83,47 @@ Example: When read length is not specified, it will default to 8.
  generatervis::fill_fastq("patient_123",output_dir = ".", n = 2, read_length = 8)
 ```
 
+### To visualise raw (.fastq) data by plotting FASTQ sequences in a grid format, use the following steps:
+
+1. Define the patient ID for which you want to plot the FASTQ sequences.
+2. Specify the number of reads you want to plot.
+3. Optionally, specify the read length (default is 8). It should be multiple of 4.
+4. The generated plot will be saved in the current working directory by default. If another directory is specified, the plot will be saved there.
+
+```{r example6}
+# Plot FASTQ sequences for patient ID "patient_123" with 2 reads of length 8
+ generatervis::fastq_plot("patient_123", output_dir = ".", n = 2, read_length = 8)
+```
+
+
+### To convert a raw (.fastq) file to a processed (.bam) file using a dummy .sam format
+
+```{r example7}
+# Convert a .fastq file to a .bam file
+output_dir <- tempdir()
+n <- 2
+read_length <- 8
+patient_id <- "test_patient"
+fastq_file <- file.path(output_dir, paste0(patient_id, ".fastq"))
+generatervis::fill_fastq(patient_id, output_dir, n, read_length)
+generatervis::fastq_to_bam(fastq_file, sam_file = paste0(patient_id,".sam"), reference = "chr1")
+```
+
+This will create a `.sam` file in the specified output directory. The `.sam` file will contain the same number of reads as the `.fastq` file, and the sequence and quality scores will be identical.
+
+To create the corresponding `.bam` file, you can use the `samtools` command-line tool. The `.bam` file will be created in the same directory as the `.sam` file. For this, run the following code in the command line interface:
+
+```{bash, example8}
+# samtools view -Sb dummy.sam > dummy.bam
+```
+
+
+### To convert a processed (.bam) file to a summarised (.vcf) file format, use the following steps:
+
+1. Define the patient ID for which you want to convert the .bam file.
+2. Specify the output VCF file name.
+
+```{r, example9}
+patient_id <- "patient_123"
+generatervis::bam_to_vcf(patient_id = patient_id, vcf_file ="output.vcf")
+```
