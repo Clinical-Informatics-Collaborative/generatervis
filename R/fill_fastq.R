@@ -28,7 +28,7 @@
 #' }
 #'
 #' @export
-fill_fastq <- function(patient_id, output_dir, n, read_length) {
+fill_fastq <- function(patient_id, output_dir = ".", n, read_length) {
 
   file_name <- file.path(output_dir, paste0(patient_id, ".fastq"))
   # Create an empty FASTQ file

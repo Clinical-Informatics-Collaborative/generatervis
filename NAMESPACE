@@ -3,5 +3,6 @@
 export(clean)
 export(create_empty_fastq)
 export(data_frame)
+export(fastq_plot)
 export(fill_fastq)
 export(rreads)

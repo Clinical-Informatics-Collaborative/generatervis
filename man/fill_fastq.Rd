@@ -4,7 +4,7 @@
 \alias{fill_fastq}
 \title{Function to fill a FASTQ file with random reads}
 \usage{
-fill_fastq(patient_id, output_dir, n, read_length)
+fill_fastq(patient_id, output_dir = ".", n, read_length)
 }
 \arguments{
 \item{patient_id}{A character string representing the patient ID.}
