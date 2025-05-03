@@ -3,6 +3,7 @@
 export(bam_to_vcf)
 export(clean)
 export(create_empty_fastq)
+export(create_metadata)
 export(data_frame)
 export(fastq_plot)
 export(fastq_to_bam)
