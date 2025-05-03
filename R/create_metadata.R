@@ -14,7 +14,7 @@
 #'
 #' @return NULL
 #' @examples
-#' # create_metadata(c("P1", "P2"))
+#' # create_metadata(c("patient_123", "patient_123"))
 #' @export
 create_metadata <- function(patient_id) {
   dir.create("cbioportal_study")
