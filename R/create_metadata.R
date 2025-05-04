@@ -16,6 +16,11 @@
 #' @examples
 #' # create_metadata(c("patient_123", "patient_456"))
 #' @export
+#'
+#' @importFrom utils write.table writeLines
+#' @importFrom stats setNames
+#' @importFrom graphics axis rect text
+#' @importFrom grDevices dev.off png
 create_metadata <- function(patient_id,output_dir = paste0(".","/cbioportal_study")) {
   # Create the output directory if it doesn't exist
 #  if (!dir.exists(output_dir)) {
@@ -80,4 +85,8 @@ create_metadata <- function(patient_id,output_dir = paste0(".","/cbioportal_stud
     "data_filename: data_mutations.txt",
     "reference_genome_id: hg19"
   ), file.path(output_dir, "meta_mutations.txt"))
+
+  # Add case lists folder
+  case_lists_dir <- file.path(output_dir, "case_lists")
+
 }
