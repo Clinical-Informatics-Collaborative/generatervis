@@ -16,7 +16,7 @@ fastq_plot(patient_id, output_dir = ".", n, read_length)
 \item{read_length}{An integer specifying the length of each read. Default is 8.}
 }
 \description{
-Function to plot FASTQ sequences in a grid format
+Function to plot nucleotide sequences from a raw `.fastq` file in a grid format
 }
 \details{
 The function reads a FASTQ file and plots the sequences in a grid format.

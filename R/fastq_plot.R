@@ -1,5 +1,5 @@
 #' @title fastq_plot
-#' @description Function to plot FASTQ sequences in a grid format
+#' @description Function to plot nucleotide sequences from a raw `.fastq` file in a grid format
 #'
 #' @param patient_id A character string representing the patient ID.
 #' @param output_dir A character string specifying the directory where the plot file will be saved. Default is the current working directory.

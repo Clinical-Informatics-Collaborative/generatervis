@@ -17,7 +17,8 @@
 #' # create_metadata(c("patient_123", "patient_456"))
 #' @export
 #'
-#' @importFrom utils write.table writeLines
+#' @importFrom utils write.table
+#' @importFrom base writeLines
 #' @importFrom stats setNames
 #' @importFrom graphics axis rect text
 #' @importFrom grDevices dev.off png

@@ -23,83 +23,86 @@ knitr::opts_chunk$set(
 
 The goal of `generatervis` is to generate and visualise Clinical data.
 
-## Installation
+##⬇️ Installing
 
-You can install the development version of `generatervis` from [GitHub](https://github.com/) with:
+You can install the development version of `generatervis` from [GitHub](https://github.com/) with
 
-``` {r}
-# install.packages("pak")
-pak::pak("Clinical-Informatics-Collaborative/generatervis")
-```
+```{r, echo = TRUE}  
+# install.packages("pak")  
+pak::pak("Clinical-Informatics-Collaborative/generatervis")  
+```  
 
-## Example
+## Demo of the workflow
 
-### To create an empty raw (.fastq) file, use the following steps:
+The `generatervis` package provides functions to create empty `.fastq` files, generate random reads, fill raw `.fastq` files with random reads, plot `.fastq` sequences, convert `.fastq` files to BAM files, convert BAM files to VCF files, and create metadata files for patient IDs.
 
-1. Define the patient ID for which you want to create an empty FASTQ file. 
 
-2.1 When output directory is not specified, the `.fastq` file will be saved in the current working directory.
+### 🧑‍💻 Creating an empty raw `.fastq` file
+
+* Define the patient ID for which you want to create an empty raw `.fastq` file. 
+  * When output directory is not specified, the `.fastq` file will be saved in the current working directory.
 
 ```{r example1}
-# Create an empty FASTQ file for patient ID "patient_123"
+# Create an empty `.fastq` file for patient ID "patient_123"
   generatervis::create_empty_fastq("patient_123")
 ```
 
-2.2 When output directory is specified, the `.fastq` file will be saved in the specified directory.
+  * When output directory is specified, the `.fastq` file will be saved in the specified directory.
 ```{r example2}
-# Create an empty FASTQ file for patient ID "patient_456" in a specific directory
+# Create an empty `.fastq` file for patient ID "patient_456" in a specific directory
   generatervis::create_empty_fastq("patient_456", output_dir = ".")
 ```
 
-### To generate a random sample of `reads` for a Whole Genome Sequencing (WGS) dataset, use the following steps:
+### 🧑‍💻 Generating a random sample of `reads` for a Whole Genome Sequencing (WGS) dataset
 
-1. Define the patient ID for which you want to create an empty FASTQ file. 
-2. Specify the number of reads you want to generate.
-3. Optionally, specify the read length (default is 8). It should be multiple of 4.
-4. The generated reads will be saved in a `.fastq` file in the current working directory.
+* Define the patient ID for which you want to create an empty raw `.fastq` file. 
+* Specify the number of reads you want to generate.
+* Optionally, specify the read length (default is 8). It should be multiple of 4.
+* The generated reads will be saved in a `.fastq` file in the current working directory.
 
-Example 1: When read length is not specified, it will default to 8.
+When read length is not specified, it will default to 8.
 ```{r example3}
 # Generate 5 random reads for patient ID "patient_123"
  generatervis::rreads("patient_123", n = 5)
 ```
 
-Example 2: When read length is specified, it will be set to the specified value.
+When read length is specified, it will be set to the specified value.
 ```{r example4}
 # Generate 5 random reads for patient ID "patient_456" with a read length of 12
+  set.seed(1067)
  generatervis::rreads("patient_456", n = 5, read_length = 12)
 ```
 
-### To fill a FASTQ file with random reads
+### ➕️ Filling a raw `.fastq` file with random reads
 
-1. Define the patient ID for which you want to fill the FASTQ file.
-2. Specify the number of reads you want to generate.
-3. Optionally, specify the read length (default is 8). It should be multiple of 4.
-4. The generated reads will be saved in a `.fastq` file in the current working directory by default. If another directory is specified, the file will be saved there.
+* Define the patient ID for which you want to fill the raw `.fastq` file.
+* Specify the number of reads you want to generate.
+* Optionally, specify the read length (default is 8). It should be multiple of 4.
+* The generated reads will be saved in a `.fastq` file in the current working directory by default. If another directory is specified, the file will be saved there.
 
-Example: When read length is not specified, it will default to 8.
+When read length is not specified, it will default to 8.
 ```{r example5}
-# Fill a FASTQ file for patient ID "patient_123" with 2 reads of length 8
+# Fill a raw `.fastq` file for patient ID "patient_123" with 2 reads of length 8
  generatervis::fill_fastq("patient_123",output_dir = ".", n = 2, read_length = 8)
 ```
 
-### To visualise raw (.fastq) data by plotting FASTQ sequences in a grid format, use the following steps:
+### 📊 Visualising raw `.fastq` data by plotting nucleotide sequences in a grid format
 
-1. Define the patient ID for which you want to plot the FASTQ sequences.
-2. Specify the number of reads you want to plot.
-3. Optionally, specify the read length (default is 8). It should be multiple of 4.
-4. The generated plot will be saved in the current working directory by default. If another directory is specified, the plot will be saved there.
+* Define the patient ID for which you want to plot the nucleotide sequences.
+* Specify the number of reads you want to plot.
+* Optionally, specify the read length (default is 8). It should be multiple of 4.
+* The generated plot will be saved in the current working directory by default. If another directory is specified, the plot will be saved there.
 
 ```{r example6}
-# Plot FASTQ sequences for patient ID "patient_123" with 2 reads of length 8
+# Plot nucleotide sequences for patient ID "patient_123" with 2 reads of length 8
  generatervis::fastq_plot("patient_123", output_dir = ".", n = 2, read_length = 8)
 ```
 
 
-### To convert a raw (.fastq) file to a processed (.bam) file using a dummy .sam format
+### ⚙️ Converting a raw `.fastq` file to a processed `.bam` file using a dummy `.sam` format
 
 ```{r example7}
-# Convert a .fastq file to a .bam file
+# Convert a `.fastq` file to a `.bam` file
 output_dir <- tempdir()
 n <- 2
 read_length <- 8
@@ -117,13 +120,16 @@ To create the corresponding `.bam` file, you can use the `samtools` command-line
 # samtools view -Sb dummy.sam > dummy.bam
 ```
 
+### ⚙️ Converting a processed `.bam` file to a summarised `.vcf` file format
 
-### To convert a processed (.bam) file to a summarised (.vcf) file format, use the following steps:
-
-1. Define the patient ID for which you want to convert the .bam file.
-2. Specify the output VCF file name.
+* Define the patient ID for which you want to convert the `.bam` file.
+* Specify the output `.vcf` file name.
 
 ```{r, example9}
 patient_id <- "patient_123"
 generatervis::bam_to_vcf(patient_id = patient_id, vcf_file ="output.vcf")
 ```
+
+The metadata files will be written in the current working directory.
+
+When these metadata `.txt` files are ready, they can be uploaded to [`data_storarge_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal) by forking the repository and creating a pull request.
