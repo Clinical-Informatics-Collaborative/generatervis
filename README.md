@@ -22,8 +22,12 @@ You can install the development version of `generatervis` from
 # install.packages("pak")  
 pak::pak("Clinical-Informatics-Collaborative/generatervis")  
 #> 
-#> ℹ No downloads are needed
-#> ✔ 1 pkg: kept 1 [2.8s]
+#> → Will update 1 package.
+#> → The package (0 B) is cached.
+#> + generatervis 0.1.0 → 0.1.0 👷🏾‍♀️🔧 (GitHub: 3e774bb)
+#> ℹ No downloads are needed, 1 pkg is cached
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@3e774bb) (15ms)
+#> ✔ 1 pkg: upd 1 [2.1s]
 ```
 
 ## Demo of the workflow
@@ -70,12 +74,12 @@ When read length is not specified, it will default to 8.
 ``` r
 # Generate 5 random reads for patient ID "patient_123"
  generatervis::rreads("patient_123", n = 5)
-#>  [1] "@patient_123_read1" "TATGAAAA"           "+"                 
-#>  [4] "IIIIIIII"           "@patient_123_read2" "AGACTGAT"          
+#>  [1] "@patient_123_read1" "CTACGTCA"           "+"                 
+#>  [4] "IIIIIIII"           "@patient_123_read2" "TTGTCGTG"          
 #>  [7] "+"                  "IIIIIIII"           "@patient_123_read3"
-#> [10] "GTTAGCAC"           "+"                  "IIIIIIII"          
-#> [13] "@patient_123_read4" "CCTACTAC"           "+"                 
-#> [16] "IIIIIIII"           "@patient_123_read5" "TTCGAGAT"          
+#> [10] "AAGAATGT"           "+"                  "IIIIIIII"          
+#> [13] "@patient_123_read4" "GCCATTGC"           "+"                 
+#> [16] "IIIIIIII"           "@patient_123_read5" "TCGTCATC"          
 #> [19] "+"                  "IIIIIIII"
 ```
 
@@ -142,8 +146,8 @@ patient_id <- "test_patient"
 fastq_file <- file.path(output_dir, paste0(patient_id, ".fastq"))
 generatervis::fill_fastq(patient_id, output_dir, n, read_length)
 #> Creating a new FASTQ file.
-#> Empty FASTQ file created at: /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//RtmpWIf54g/test_patient.fastq
-#> Populated /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//RtmpWIf54g/test_patient.fastq with 2 reads.
+#> Empty FASTQ file created at: /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//RtmpWzS5Gv/test_patient.fastq
+#> Populated /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//RtmpWzS5Gv/test_patient.fastq with 2 reads.
 generatervis::fastq_to_bam(fastq_file, sam_file = paste0(patient_id,".sam"), reference = "chr1")
 #> Dummy SAM file written to: test_patient.sam
 ```
@@ -170,6 +174,14 @@ interface:
 patient_id <- "patient_123"
 generatervis::bam_to_vcf(patient_id = patient_id, vcf_file ="output.vcf")
 #> Mock VCF written to patient_123.vcf
+```
+
+### ⬆️ Creating the metadata files to upload to [`data_storage_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)
+
+``` r
+patient_id <- "patient_123"
+tmp_dir <- tempdir()
+metadata <- generatervis::create_metadata(patient_id, output_dir = tmp_dir)
 ```
 
 The metadata files will be written in the current working directory.

@@ -130,6 +130,14 @@ patient_id <- "patient_123"
 generatervis::bam_to_vcf(patient_id = patient_id, vcf_file ="output.vcf")
 ```
 
+### ⬆️ Creating the metadata files to upload to [`data_storage_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)
+
+```{r, example10}
+patient_id <- "patient_123"
+tmp_dir <- tempdir()
+metadata <- generatervis::create_metadata(patient_id, output_dir = tmp_dir)
+```
+
 The metadata files will be written in the current working directory.
 
 When these metadata `.txt` files are ready, they can be uploaded to [`data_storarge_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal) by forking the repository and creating a pull request.
