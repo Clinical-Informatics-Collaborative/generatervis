@@ -18,7 +18,6 @@
 #' @export
 #'
 #' @importFrom utils write.table
-#' @importFrom base writeLines
 #' @importFrom stats setNames
 #' @importFrom graphics axis rect text
 #' @importFrom grDevices dev.off png
