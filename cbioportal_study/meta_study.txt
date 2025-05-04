@@ -1,0 +1,5 @@
+type_of_cancer: cancer_generic
+cancer_study_identifier: test_study
+name: Test Study
+description: This is a test study created via R
+short_name: test

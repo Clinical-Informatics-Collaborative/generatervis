@@ -14,11 +14,16 @@
 #'
 #' @return NULL
 #' @examples
-#' # create_metadata(c("patient_123", "patient_123"))
+#' # create_metadata(c("patient_123", "patient_456"))
 #' @export
-create_metadata <- function(patient_id) {
-  dir.create("cbioportal_study")
-  setwd("cbioportal_study")
+create_metadata <- function(patient_id,output_dir = paste0(".","/cbioportal_study")) {
+  # Create the output directory if it doesn't exist
+#  if (!dir.exists(output_dir)) {
+#    dir.create(output_dir, recursive = TRUE)
+#  }
+
+  # Set working directory to the output directory
+#  setwd(output_dir)
 
   # Define patient data
   patient_data <- data.frame(
@@ -28,24 +33,24 @@ create_metadata <- function(patient_id) {
   )
 
   # Write clinical patient data
-  write.table(patient_data, "data_clinical_patient.txt", sep = "\t", row.names = FALSE, quote = FALSE)
+  data_clinical_patient <- write.table(patient_data, file.path(output_dir, "data_clinical_patient.txt"), sep = "\t", row.names = FALSE, quote = FALSE)
 
   # Write meta file for clinical patient data
-  writeLines(c(
+  meta_clinical_patient <- writeLines(c(
     "cancer_study_identifier: test_study",
     "genetic_alteration_type: CLINICAL",
     "datatype: PATIENT_ATTRIBUTES",
     "data_filename: data_clinical_patient.txt"
-  ), "meta_clinical_patient.txt")
+  ), file.path(output_dir, "meta_clinical_patient.txt"))
 
   # Define cancer study metadata
-  writeLines(c(
+  meta_study <- writeLines(c(
     "type_of_cancer: cancer_generic",
     "cancer_study_identifier: test_study",
     "name: Test Study",
     "description: This is a test study created via R",
     "short_name: test"
-  ), "meta_study.txt")
+  ), file.path(output_dir, "meta_study.txt"))
 
   # Define mutation data
   mutation_data <- data.frame(
@@ -65,14 +70,14 @@ create_metadata <- function(patient_id) {
     HGVSp_Short = c("p.R175H", "p.Q175*")
   )
 
-  write.table(mutation_data, "data_mutations.txt", sep = "\t", row.names = FALSE, quote = FALSE, na = "")
+  data_mutations <- write.table(mutation_data, file.path(output_dir, "data_mutations.txt"), sep = "\t", row.names = FALSE, quote = FALSE, na = "")
 
   # Write meta file for mutation data
-  writeLines(c(
+  meta_mutations <- writeLines(c(
     "cancer_study_identifier: test_study",
     "genetic_alteration_type: MUTATION",
     "datatype: MAF",
     "data_filename: data_mutations.txt",
     "reference_genome_id: hg19"
-  ), "meta_mutations.txt")
+  ), file.path(output_dir, "meta_mutations.txt"))
 }
