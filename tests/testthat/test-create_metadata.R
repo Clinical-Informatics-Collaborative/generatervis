@@ -22,6 +22,11 @@ test_that("create_metadata() works", {
   expect_true(file.exists(file.path(output_path, "meta_study.txt")))
   expect_true(file.exists(file.path(output_path, "data_mutations.txt")))
   expect_true(file.exists(file.path(output_path, "meta_mutations.txt")))
+  expect_true(file.exists(file.path(output_path, "case_lists", "cases_all.txt")))
+  expect_true(file.exists(file.path(output_path, "case_lists", "cases_cna.txt")))
+  expect_true(file.exists(file.path(output_path, "case_lists", "cases_cnaseq.txt")))
+  expect_true(file.exists(file.path(output_path, "case_lists", "cases_sequenced.txt")))
+
 
   # Clean up
   unlink(temp_dir, recursive = TRUE)
