@@ -11,7 +11,7 @@
 #' - meta_mutations.txt: Metadata for mutation data.
 #'
 #' @param patient_id A vector of patient IDs to be included in the clinical data.
-#'
+#' @param output_dir The directory where the metadata files will be created. Default is "./cbioportal_study".
 #' @return NULL
 #' @examples
 #' # create_metadata(c("patient_123", "patient_456"))
