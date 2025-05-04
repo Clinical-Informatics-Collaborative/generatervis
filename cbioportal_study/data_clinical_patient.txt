@@ -1,3 +1,0 @@
-PATIENT_ID	AGE	SEX
-patient_123	65	Male
-patient_456	52	Female

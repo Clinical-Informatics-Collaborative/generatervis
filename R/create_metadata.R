@@ -104,7 +104,7 @@ create_metadata <- function(patient_id,output_dir = paste0(".","/cbioportal_stud
       "case_list_name: All samples",
       "case_list_description: All samples (36 samples)",
       "case_list_category: all_cases_in_study",
-      paste0("case_list_ids: ", patient_id)
+      paste0("case_list_ids: ", paste(patient_id, collapse = " "))
     ),
     cases_cna.txt = c(
       paste0("cancer_study_identifier: ", study_id),
@@ -112,7 +112,7 @@ create_metadata <- function(patient_id,output_dir = paste0(".","/cbioportal_stud
       "case_list_name: Samples with CNA data",
       "case_list_description: Samples with CNA data (34 samples)",
       "case_list_category: all_cases_with_cna_data",
-      paste0("case_list_ids: ", patient_id)
+      paste0("case_list_ids: ", paste(patient_id, collapse = " "))
     ),
     cases_cnaseq.txt = c(
       paste0("cancer_study_identifier: ", study_id),
@@ -120,7 +120,7 @@ create_metadata <- function(patient_id,output_dir = paste0(".","/cbioportal_stud
       "case_list_name: Samples with mutation and CNA data",
       "case_list_description: Samples with mutation and CNA data (34 samples)",
       "case_list_category: all_cases_with_mutation_and_cna_data",
-      paste0("case_list_ids: ", patient_id)
+      paste0("case_list_ids: ", paste(patient_id, collapse = " "))
     ),
     cases_sequenced.txt = c(
       paste0("cancer_study_identifier: ", study_id),
@@ -128,7 +128,7 @@ create_metadata <- function(patient_id,output_dir = paste0(".","/cbioportal_stud
       "case_list_name: Samples with mutation data",
       "case_list_description: Samples with mutation data (34 samples)",
       "case_list_category: all_cases_with_mutation_data",
-      paste0("case_list_ids: ", patient_id)
+      paste0("case_list_ids: ", paste(patient_id, collapse = " "))
     )
   )
 
