@@ -4,10 +4,12 @@
 \alias{create_metadata}
 \title{Create metadata for cBioPortal study}
 \usage{
-create_metadata(patient_id)
+create_metadata(patient_id, output_dir = paste0(".", "/cbioportal_study"))
 }
 \arguments{
 \item{patient_id}{A vector of patient IDs to be included in the clinical data.}
+
+\item{output_dir}{The directory where the metadata files will be created. Default is "./cbioportal_study".}
 }
 \description{
 This function creates a directory structure and metadata files for a cBioPortal study.
@@ -22,5 +24,5 @@ The function creates a directory named "cbioportal_study" and writes the followi
 - meta_mutations.txt: Metadata for mutation data.
 }
 \examples{
-# create_metadata(c("patient_123", "patient_123"))
+# create_metadata(c("patient_123", "patient_456"))
 }
