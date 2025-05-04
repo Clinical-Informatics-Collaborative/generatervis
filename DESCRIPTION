@@ -2,9 +2,8 @@ Package: generatervis
 Type: Package
 Title: Generate and visualise synthetic data, and create metadata files for research data management workflow.
 Version: 0.1.0
-Author: person("Jyoti", "Bhogal", email = "bhogaljyoti1@gmail.com", 
-  role = c("aut", "cre"))
-Maintainer: The package maintainer bhogaljyoti1@gmail.com
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: MIT + file LICENSE
