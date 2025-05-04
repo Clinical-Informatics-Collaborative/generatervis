@@ -20,6 +20,8 @@ A data frame
 Title
 }
 \examples{
+nrow <- 2
+ncol <- 3
 x <- c("a","p")
 y <- c(12.56,38)
 z <- c("abc","pqr")
