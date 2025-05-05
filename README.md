@@ -29,15 +29,15 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 #> 
 #> → Will update 1 package.
 #> → The package (0 B) is cached.
-#> + generatervis 0.1.0 → 0.1.0 👷🏿🔧 (GitHub: 08cd0ba)
+#> + generatervis 0.1.0 → 0.1.0 👷🏽‍♂️🔧 (GitHub: 4c2d114)
 #> ℹ No downloads are needed, 1 pkg is cached
-#> ✔ Got generatervis 0.1.0 (source) (45.14 kB)
+#> ✔ Got generatervis 0.1.0 (source) (45.87 kB)
 #> ℹ Packaging generatervis 0.1.0
-#> ✔ Packaged generatervis 0.1.0 (375ms)
+#> ✔ Packaged generatervis 0.1.0 (376ms)
 #> ℹ Building generatervis 0.1.0
-#> ✔ Built generatervis 0.1.0 (586ms)
-#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@08cd0ba) (19ms)
-#> ✔ 1 pkg: upd 1, dld 1 (NA B) [5.6s]
+#> ✔ Built generatervis 0.1.0 (573ms)
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@4c2d114) (21ms)
+#> ✔ 1 pkg: upd 1, dld 1 (NA B) [6.6s]
 ```
 
 ## Usage
@@ -45,35 +45,35 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 Create an empty raw `.fastq` file for the specified patient.
 
 ``` r
-generatervis::create_empty_fastq(patient_id="patient_123")
+patient_id <- "patient_123"
+generatervis::create_empty_fastq(patient_id)
 ```
 
 Generate a random sample of `reads` for a Whole Genome Sequencing (WGS)
 dataset for the specified patient ID.
 
 ``` r
-generatervis::rreads(patient_id="patient_123", n = 5)
+generatervis::rreads(patient_id, n = 5)
 ```
 
 Populate the `.fastq` file with the random reads.
 
 ``` r
-generatervis::fill_fastq(patient_id="patient_123",output_dir = tempdir(), n = 2, read_length = 8)
+output_dir <- tempdir()
+generatervis::fill_fastq(patient_id,output_dir, n = 2, read_length = 8)
 ```
 
 (Optional) Plot the nucleotide sequences in the `.fastq` file in a grid
 format.
 
 ``` r
-generatervis::fastq_plot(patient_id="patient_123", output_dir = tempdir(), n = 2, read_length = 8)
+generatervis::fastq_plot(patient_id, output_dir, n = 2, read_length = 8)
 ```
 
 Convert the (raw) `.fastq` file to a (processed) `.bam` file using a
 dummy `.sam` format.
 
 ``` r
-output_dir <- tempdir()
-patient_id <- "patient_123"
 fastq_file <- file.path(output_dir, paste0(patient_id, ".fastq"))
 generatervis::fill_fastq(patient_id, output_dir, n =2, read_length=8)
 generatervis::fastq_to_bam(fastq_file, patient_id, output_dir, sam_file = paste0(output_dir, "/", patient_id, ".sam"), reference = "chr1")
@@ -90,16 +90,13 @@ Convert the (processed) `.bam` file to a (summarised) `.vcf` file
 format.
 
 ``` r
-patient_id <- “patient_123”
-generatervis::bam_to_vcf(patient_id, output_dir = tempdir(), vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))
+generatervis::bam_to_vcf(patient_id, output_dir, vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))
 ```
 
 Create the metadata files to upload to
 [`data_storage_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)
 
 ``` r
-patient_id <- "patient_123"
-output_dir <- tempdir()
 metadata <- generatervis::create_metadata(patient_id, output_dir)
 ```
 
