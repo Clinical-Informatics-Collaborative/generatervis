@@ -49,27 +49,29 @@ generatervis::create_empty_fastq(patient_id)
 Generate a random sample of `reads` for a Whole Genome Sequencing (WGS) dataset for the specified patient ID.
 
 ``` r
-generatervis::rreads(patient_id, n = 5)
+n <- 2
+generatervis::rreads(patient_id, n)
 ```
 
 Populate the `.fastq` file with the random reads.
 
 ``` r 
 output_dir <- tempdir()
-generatervis::fill_fastq(patient_id, output_dir, n = 2, read_length = 8)
+read_length <- 8
+generatervis::fill_fastq(patient_id, output_dir, n , read_length)
 ```
 
 (Optional) Plot the nucleotide sequences in the `.fastq` file in a grid format.
 
 ``` r
-generatervis::fastq_plot(patient_id, output_dir, n = 2, read_length = 8)
+generatervis::fastq_plot(patient_id, output_dir, n , read_length)
 ```
 
 Convert the (raw) `.fastq` file to a (processed) `.bam` file using a dummy `.sam` format.
 
 ``` r
 fastq_file <- file.path(output_dir, paste0(patient_id, ".fastq"))
-generatervis::fill_fastq(patient_id, output_dir, n =2, read_length=8)
+generatervis::fill_fastq(patient_id, output_dir, n, read_length)
 generatervis::fastq_to_bam(fastq_file, patient_id, output_dir, sam_file = paste0(output_dir, "/", patient_id, ".sam"), reference = "chr1")
 ```
 
