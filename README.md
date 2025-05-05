@@ -29,15 +29,10 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 #> 
 #> → Will update 1 package.
 #> → The package (0 B) is cached.
-#> + generatervis 0.1.0 → 0.1.0 👷🏻‍♂️🔧 (GitHub: ed615e3)
+#> + generatervis 0.1.0 → 0.1.0 👷🏿‍♂️🔧 (GitHub: e0f8fc8)
 #> ℹ No downloads are needed, 1 pkg is cached
-#> ✔ Got generatervis 0.1.0 (source) (45.80 kB)
-#> ℹ Packaging generatervis 0.1.0
-#> ✔ Packaged generatervis 0.1.0 (510ms)
-#> ℹ Building generatervis 0.1.0
-#> ✔ Built generatervis 0.1.0 (821ms)
-#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@ed615e3) (25ms)
-#> ✔ 1 pkg: upd 1, dld 1 (NA B) [6.2s]
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@e0f8fc8) (25ms)
+#> ✔ 1 pkg: upd 1 [2.9s]
 ```
 
 ## Usage
@@ -144,4 +139,4 @@ To be added.
 This package is written as a part of the volunteer programme by the
 [Research Computing Program, Walter and Eliza Hall Institute of Medical
 Research](https://wehi-researchcomputing.github.io/), mentored by
-[Rowland Mosbergen](https://github.com/rowlandm)
+[Rowland Mosbergen](https://github.com/rowlandm).

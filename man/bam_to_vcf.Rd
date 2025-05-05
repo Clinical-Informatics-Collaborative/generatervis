@@ -19,10 +19,10 @@ bam_to_vcf(
 }
 \description{
 This function simulates the conversion of `.bam`-like data to VCF format.
-It creates a mock VCF file with dummy data.
+It creates a dummy VCF file with dummy data.
 }
 \details{
-The function creates a mock `.vcf` file with dummy data.
+The function creates a dummy `.vcf` file with dummy data.
 The `.vcf` file contains the following fields:
 - CHROM: Chromosome name
 - POS: Position on the chromosome

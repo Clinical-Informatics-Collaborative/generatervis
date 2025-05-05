@@ -1,7 +1,7 @@
 #' Convert `.bam`-like data to VCF format
 #'
 #' This function simulates the conversion of `.bam`-like data to VCF format.
-#' It creates a mock VCF file with dummy data.
+#' It creates a dummy VCF file with dummy data.
 #'
 #' @param patient_id A character string specifying the patient ID. This will be used as the base name for the output `.vcf` file.
 #' @param output_dir A character string specifying the directory where the `.vcf` file will be saved.
@@ -13,7 +13,7 @@
 #' output_dir <- tempdir()
 #' bam_to_vcf(patient_id, output_dir, vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))
 #' @details
-#' The function creates a mock `.vcf` file with dummy data.
+#' The function creates a dummy `.vcf` file with dummy data.
 #' The `.vcf` file contains the following fields:
 #' - CHROM: Chromosome name
 #' - POS: Position on the chromosome
@@ -67,5 +67,5 @@ bam_to_vcf <- function(patient_id, output_dir = tempdir(), vcf_file = paste0(out
   # Write to file
   writeLines(c(vcf_header, vcf_body), con = vcf_file)
 
-  cat("Mock .vcf written to", vcf_file)
+  cat("Dummy .vcf written to", vcf_file)
 }

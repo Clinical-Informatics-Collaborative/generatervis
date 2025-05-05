@@ -130,4 +130,4 @@ To be added.
 
 ## Acknowledgments
 
-This package is written as a part of the volunteer programme by the [Research Computing Program, Walter and Eliza Hall Institute of Medical Research](https://wehi-researchcomputing.github.io/), mentored by [Rowland Mosbergen](https://github.com/rowlandm)
+This package is written as a part of the volunteer programme by the [Research Computing Program, Walter and Eliza Hall Institute of Medical Research](https://wehi-researchcomputing.github.io/), mentored by [Rowland Mosbergen](https://github.com/rowlandm).
