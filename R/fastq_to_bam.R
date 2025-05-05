@@ -73,7 +73,7 @@ fastq_to_bam <- function(fastq_file, patient_id, output_dir = tempdir(), sam_fil
   }
 
   close(con)
-  cat("Dummy SAM file written to:", sam_file, "\n")
+  cat("Dummy .sam file written to:", sam_file, "\n")
 }
 
 # Note: Code to convert .sam to .bam file: Go to the command line interface and run:
