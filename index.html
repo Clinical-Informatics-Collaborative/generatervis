@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Generate and visualise synthetic data, and create metadata files for research data management workflow. • generatervis</title>
+<title>Generate and visualise synthetic Whole Genome Sequence data • generatervis</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Generate and visualise synthetic data, and create metadata files for research data management workflow.">
-<meta name="description" content="More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.">
-<meta property="og:description" content="More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Generate and visualise synthetic Whole Genome Sequence data">
+<meta name="description" content="Generate and visualise synthetic Whole Genome Sequence data This package provides a research data management workflow to create synthetic Whole Genome Sequence clinical data.">
+<meta property="og:description" content="Generate and visualise synthetic Whole Genome Sequence data This package provides a research data management workflow to create synthetic Whole Genome Sequence clinical data.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -50,7 +50,11 @@
 <!-- badges: start -->
 
 <!-- badges: end -->
-<p>The goal of <code>generatervis</code> is to generate and visualise Clinical data.</p>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<p>The <code>generatervis</code> package provides functions to create empty <code>.fastq</code> files, generate random reads, fill raw <code>.fastq</code> files with random reads, plot <code>.fastq</code> sequences, convert <code>.fastq</code> files to BAM files, convert BAM files to VCF files, and create metadata files for patient IDs.</p>
+</div>
 <div class="section level2">
 <h2 id="id_️-installing-generatervis">⬇️ Installing <code>generatervis</code>
 <a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-installing-generatervis"></a>
@@ -60,121 +64,46 @@
 <code class="sourceCode R"><span><span class="co"># install.packages("pak")  </span></span>
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"Clinical-Informatics-Collaborative/generatervis"</span><span class="op">)</span>  </span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; ℹ No downloads are needed</span></span>
-<span><span class="co">#&gt; ✔ 1 pkg: kept 1 [2.7s]</span></span></code></pre></div>
+<span><span class="co">#&gt; → Will update 1 package.</span></span>
+<span><span class="co">#&gt; → The package (0 B) is cached.</span></span>
+<span><span class="co">#&gt; + generatervis 0.1.0 → 0.1.0 👷🔧 (GitHub: f80a370)</span></span>
+<span><span class="co">#&gt; ℹ No downloads are needed, 1 pkg is cached</span></span>
+<span><span class="co">#&gt; ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@f80a370) (19ms)</span></span>
+<span><span class="co">#&gt; ✔ 1 pkg: upd 1 [2.8s]</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="demo-of-the-workflow">Demo of the workflow<a class="anchor" aria-label="anchor" href="#demo-of-the-workflow"></a>
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>The <code>generatervis</code> package provides functions to create empty <code>.fastq</code> files, generate random reads, fill raw <code>.fastq</code> files with random reads, plot <code>.fastq</code> sequences, convert <code>.fastq</code> files to BAM files, convert BAM files to VCF files, and create metadata files for patient IDs.</p>
-<div class="section level3">
-<h3 id="id_-creating-an-empty-raw-fastq-file">🧑‍💻 Creating an empty raw <code>.fastq</code> file<a class="anchor" aria-label="anchor" href="#id_-creating-an-empty-raw-fastq-file"></a>
-</h3>
-<ul>
-<li>Define the patient ID for which you want to create an empty raw <code>.fastq</code> file.
-<ul>
-<li>When output directory is not specified, the <code>.fastq</code> file will be saved in the current working directory.</li>
-</ul>
-</li>
-</ul>
+<p>Create an empty raw <code>.fastq</code> file for the specified patient.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Create an empty `.fastq` file for patient ID "patient_123"</span></span>
-<span>  <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/create_empty_fastq.html">create_empty_fastq</a></span><span class="op">(</span><span class="st">"patient_123"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Empty FASTQ file created at: ./patient_123.fastq</span></span></code></pre></div>
-<ul>
-<li>When output directory is specified, the <code>.fastq</code> file will be saved in the specified directory.</li>
-</ul>
+<code class="sourceCode R"><span><span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/create_empty_fastq.html">create_empty_fastq</a></span><span class="op">(</span>patient_id<span class="op">=</span><span class="st">"patient_123"</span><span class="op">)</span></span></code></pre></div>
+<p>Generate a random sample of <code>reads</code> for a Whole Genome Sequencing (WGS) dataset for the specified patient ID.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Create an empty `.fastq` file for patient ID "patient_456" in a specific directory</span></span>
-<span>  <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/create_empty_fastq.html">create_empty_fastq</a></span><span class="op">(</span><span class="st">"patient_456"</span>, output_dir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Empty FASTQ file created at: ./patient_456.fastq</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="id_-generating-a-random-sample-of-reads-for-a-whole-genome-sequencing-wgs-dataset">🧑‍💻 Generating a random sample of <code>reads</code> for a Whole Genome Sequencing (WGS) dataset<a class="anchor" aria-label="anchor" href="#id_-generating-a-random-sample-of-reads-for-a-whole-genome-sequencing-wgs-dataset"></a>
-</h3>
-<p>To create an empty random reads, define the patient ID, specify the number of reads to generate, and optionally set the read length (default is 8, and it must be a multiple of 4). The resulting reads will be saved in the current working directory.</p>
-<p>See the below examples:</p>
+<code class="sourceCode R"><span><span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/rreads.html">rreads</a></span><span class="op">(</span>patient_id<span class="op">=</span><span class="st">"patient_123"</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<p>Populate the <code>.fastq</code> file with the random reads.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Generate 5 random reads for patient ID "patient_123"</span></span>
-<span> <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/rreads.html">rreads</a></span><span class="op">(</span><span class="st">"patient_123"</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  [1] "@patient_123_read1" "CGTAGCCA"           "+"                 </span></span>
-<span><span class="co">#&gt;  [4] "IIIIIIII"           "@patient_123_read2" "CATTTACA"          </span></span>
-<span><span class="co">#&gt;  [7] "+"                  "IIIIIIII"           "@patient_123_read3"</span></span>
-<span><span class="co">#&gt; [10] "CGCTGCCA"           "+"                  "IIIIIIII"          </span></span>
-<span><span class="co">#&gt; [13] "@patient_123_read4" "CTGTGGGT"           "+"                 </span></span>
-<span><span class="co">#&gt; [16] "IIIIIIII"           "@patient_123_read5" "TTCCGTTC"          </span></span>
-<span><span class="co">#&gt; [19] "+"                  "IIIIIIII"</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/fill_fastq.html">fill_fastq</a></span><span class="op">(</span>patient_id<span class="op">=</span><span class="st">"patient_123"</span>,output_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">2</span>, read_length <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span></code></pre></div>
+<p>(Optional) Plot the nucleotide sequences in the <code>.fastq</code> file in a grid format.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Generate 5 random reads for patient ID "patient_456" with a read length of 12</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1067</span><span class="op">)</span></span>
-<span> <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/rreads.html">rreads</a></span><span class="op">(</span><span class="st">"patient_456"</span>, n <span class="op">=</span> <span class="fl">5</span>, read_length <span class="op">=</span> <span class="fl">12</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  [1] "@patient_456_read1" "TCGAGGCCTGGC"       "+"                 </span></span>
-<span><span class="co">#&gt;  [4] "IIIIIIIIIIII"       "@patient_456_read2" "CGAAATTTACAG"      </span></span>
-<span><span class="co">#&gt;  [7] "+"                  "IIIIIIIIIIII"       "@patient_456_read3"</span></span>
-<span><span class="co">#&gt; [10] "TTGTCTATACAA"       "+"                  "IIIIIIIIIIII"      </span></span>
-<span><span class="co">#&gt; [13] "@patient_456_read4" "CACAAATATTAG"       "+"                 </span></span>
-<span><span class="co">#&gt; [16] "IIIIIIIIIIII"       "@patient_456_read5" "CGAGGGATCACG"      </span></span>
-<span><span class="co">#&gt; [19] "+"                  "IIIIIIIIIIII"</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="id_️-filling-a-raw-fastq-file-with-random-reads">➕️ Filling a raw <code>.fastq</code> file with random reads<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-filling-a-raw-fastq-file-with-random-reads"></a>
-</h3>
-<p>To fill a raw <code>.fastq</code> file, define the patient ID, specify the number of reads to generate, and optionally set the read length (default is 8 and must be a multiple of 4). The generated reads will be saved in a <code>.fastq</code> file in the current working directory by default, or in a specified directory if provided.</p>
+<code class="sourceCode R"><span><span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/fastq_plot.html">fastq_plot</a></span><span class="op">(</span>patient_id<span class="op">=</span><span class="st">"patient_123"</span>, output_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">2</span>, read_length <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span></code></pre></div>
+<p>Convert the (raw) <code>.fastq</code> file to a (processed) <code>.bam</code> file using a dummy <code>.sam</code> format.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Fill a raw `.fastq` file for patient ID "patient_123" with 2 reads of length 8</span></span>
-<span> <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/fill_fastq.html">fill_fastq</a></span><span class="op">(</span><span class="st">"patient_123"</span>,output_dir <span class="op">=</span> <span class="st">"."</span>, n <span class="op">=</span> <span class="fl">2</span>, read_length <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span>
-<span><span class="co">#&gt; File already exists. Appending reads to the existing file.</span></span>
-<span><span class="co">#&gt; Populated ./patient_123.fastq with 2 reads.</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="id_-visualising-raw-fastq-data-by-plotting-nucleotide-sequences-in-a-grid-format">📊 Visualising raw <code>.fastq</code> data by plotting nucleotide sequences in a grid format<a class="anchor" aria-label="anchor" href="#id_-visualising-raw-fastq-data-by-plotting-nucleotide-sequences-in-a-grid-format"></a>
-</h3>
-<p>To plot nucleotide sequences as a heatmap, define the patient ID and specify the number of reads to include in the plot; you may also optionally set the read length (default is 8 and must be a multiple of 4). The resulting plot will be saved in the current working directory by default, or in a specified directory if provided.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Plot nucleotide sequences for patient ID "patient_123" with 2 reads of length 8</span></span>
-<span> <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/fastq_plot.html">fastq_plot</a></span><span class="op">(</span><span class="st">"patient_123"</span>, output_dir <span class="op">=</span> <span class="st">"."</span>, n <span class="op">=</span> <span class="fl">2</span>, read_length <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Plot saved to: ./fastq_plot_patient_123.png</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="id_️-converting-a-raw-fastq-file-to-a-processed-bam-file-using-a-dummy-sam-format">⚙️ Converting a raw <code>.fastq</code> file to a processed <code>.bam</code> file using a dummy <code>.sam</code> format<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-converting-a-raw-fastq-file-to-a-processed-bam-file-using-a-dummy-sam-format"></a>
-</h3>
-<p>To convert a raw <code>.fastq</code> file to a processed <code>.bam</code> file, define the patient ID and specify the number of reads to include in the plot; you may also optionally set the read length (default is 8 and must be a multiple of 4). This will create a dummy <code>.sam</code> file. The <code>.sam</code> file will contain the same number of reads as the <code>.fastq</code> file, and the sequence and quality scores will be identical.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Convert a `.fastq` file to a `.bam` file</span></span>
-<span><span class="va">output_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
-<span><span class="va">read_length</span> <span class="op">&lt;-</span> <span class="fl">8</span></span>
-<span><span class="va">patient_id</span> <span class="op">&lt;-</span> <span class="st">"test_patient"</span></span>
+<code class="sourceCode R"><span><span class="va">output_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">patient_id</span> <span class="op">&lt;-</span> <span class="st">"patient_123"</span></span>
 <span><span class="va">fastq_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">output_dir</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">patient_id</span>, <span class="st">".fastq"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/fill_fastq.html">fill_fastq</a></span><span class="op">(</span><span class="va">patient_id</span>, <span class="va">output_dir</span>, <span class="va">n</span>, <span class="va">read_length</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Creating a new FASTQ file.</span></span>
-<span><span class="co">#&gt; Empty FASTQ file created at: /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//RtmpBKGT5t/test_patient.fastq</span></span>
-<span><span class="co">#&gt; Populated /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//RtmpBKGT5t/test_patient.fastq with 2 reads.</span></span>
-<span><span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/fastq_to_bam.html">fastq_to_bam</a></span><span class="op">(</span><span class="va">fastq_file</span>, sam_file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">patient_id</span>,<span class="st">".sam"</span><span class="op">)</span>, reference <span class="op">=</span> <span class="st">"chr1"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Dummy SAM file written to: test_patient.sam</span></span></code></pre></div>
-<p>To create the corresponding <code>.bam</code> file, use the <code>samtools</code> command-line tool. The <code>.bam</code> file will be created in the same directory as the <code>.sam</code> file. For this, run the following code in the command line interface:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># samtools view -Sb dummy.sam &gt; dummy.bam</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="id_️-converting-a-processed-bam-file-to-a-summarised-vcf-file-format">⚙️ Converting a processed <code>.bam</code> file to a summarised <code>.vcf</code> file format<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-converting-a-processed-bam-file-to-a-summarised-vcf-file-format"></a>
-</h3>
-<p>To convert a <code>.bam</code> file, define the patient ID and specify the desired output <code>.vcf</code> file name.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<span><span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/fill_fastq.html">fill_fastq</a></span><span class="op">(</span><span class="va">patient_id</span>, <span class="va">output_dir</span>, n <span class="op">=</span><span class="fl">2</span>, read_length<span class="op">=</span><span class="fl">8</span><span class="op">)</span></span>
+<span><span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/fastq_to_bam.html">fastq_to_bam</a></span><span class="op">(</span><span class="va">fastq_file</span>, <span class="va">patient_id</span>, <span class="va">output_dir</span>, sam_file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">output_dir</span>, <span class="st">"/"</span>, <span class="va">patient_id</span>, <span class="st">".sam"</span><span class="op">)</span>, reference <span class="op">=</span> <span class="st">"chr1"</span><span class="op">)</span></span></code></pre></div>
+<p>To create the corresponding <code>.bam</code> file, use the <code>samtools</code> command-line tool.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># samtools view -Sb path_to/file_name.sam &gt; path_to/file_name.bam</span></span></code></pre></div>
+<p>Convert the (processed) <code>.bam</code> file to a (summarised) <code>.vcf</code> file format.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>patient_id <span class="ot">&lt;-</span> “patient_123”</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>generatervis<span class="sc">::</span><span class="fu">bam_to_vcf</span>(patient_id, <span class="at">output_dir =</span> <span class="fu">tempdir</span>(), <span class="at">vcf_file =</span> <span class="fu">paste0</span>(output_dir, <span class="st">"/"</span>, patient_id, <span class="st">".vcf"</span>))</span></code></pre></div>
+<p>Create the metadata files to upload to <a href="https://github.com/Clinical-Informatics-Collaborative/data_storage_portal" class="external-link"><code>data_storage_repository</code></a></p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">patient_id</span> <span class="op">&lt;-</span> <span class="st">"patient_123"</span></span>
-<span><span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/bam_to_vcf.html">bam_to_vcf</a></span><span class="op">(</span>patient_id <span class="op">=</span> <span class="va">patient_id</span>, vcf_file <span class="op">=</span><span class="st">"output.vcf"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Mock VCF written to patient_123.vcf</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="id_️-creating-the-metadata-files-to-upload-to-data_storage_repository">⬆️ Creating the metadata files to upload to <a href="https://github.com/Clinical-Informatics-Collaborative/data_storage_portal" class="external-link"><code>data_storage_repository</code></a>
-<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-creating-the-metadata-files-to-upload-to-data_storage_repository"></a>
-</h3>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">patient_id</span> <span class="op">&lt;-</span> <span class="st">"patient_123"</span></span>
-<span><span class="va">tmp_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/create_metadata.html">create_metadata</a></span><span class="op">(</span><span class="va">patient_id</span>, output_dir <span class="op">=</span> <span class="va">tmp_dir</span><span class="op">)</span></span></code></pre></div>
-<p>The metadata files will be written in the current working directory.</p>
+<span><span class="va">output_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu">generatervis</span><span class="fu">::</span><span class="fu"><a href="reference/create_metadata.html">create_metadata</a></span><span class="op">(</span><span class="va">patient_id</span>, <span class="va">output_dir</span><span class="op">)</span></span></code></pre></div>
 <p>When these metadata <code>.txt</code> files are ready, they can be uploaded to <a href="https://github.com/Clinical-Informatics-Collaborative/data_storage_portal" class="external-link"><code>data_storarge_repository</code></a> by forking the repository and creating a pull request.</p>
-</div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
@@ -196,7 +125,7 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>The package maintainer <br><small class="roles"> Maintainer </small>   </li>
+<li>Jyoti Bhogal <br><small class="roles"> Maintainer </small>   </li>
 </ul>
 </div>
 
@@ -213,7 +142,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by The package maintainer.</p>
+  <p>Developed by Jyoti Bhogal.</p>
 </div>
 
 <div class="pkgdown-footer-right">
