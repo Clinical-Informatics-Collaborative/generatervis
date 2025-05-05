@@ -1,4 +1,6 @@
 test_that("fastq_to_bam() works", {
+
+  patient_id <- "patient_123"
   # Create a temporary FASTQ file
   fastq_file <- tempfile(fileext = ".fastq")
   writeLines(c(
@@ -12,21 +14,23 @@ test_that("fastq_to_bam() works", {
     "IIIIIII"
   ), fastq_file)
 
-  # Create a temporary SAM file
-  sam_file <- tempfile(fileext = ".sam")
-
   # Call the function
-  fastq_to_bam(fastq_file, sam_file, reference = "chr1")
+  fastq_to_bam(fastq_file, patient_id, output_dir = tempdir(), reference = "chr1")
 
-  # Check if the SAM file was created
+  # Check if the SAM file is created
+  sam_file <- file.path(tempdir(), paste0(patient_id, ".sam"))
   expect_true(file.exists(sam_file))
 
-  # Read the SAM file and check its contents
-  sam_lines <- readLines(sam_file)
-  expect_equal(length(sam_lines), 6) # Header + 2 reads
+  # Check if the SAM file has the expected content
+  sam_content <- readLines(sam_file)
+  expect_true(grepl("@HD\tVN:1.6\tSO:unsorted", sam_content[1]))
+  expect_true(grepl(paste0("@SQ\tSN:chr1\tLN:1000000"), sam_content[2]))
+  expect_true(grepl("@RG", sam_content[3]))
+  expect_true(grepl("@PG", sam_content[4]))
 
-  # Clean up temporary files
-  unlink(c(fastq_file, sam_file))
+  # Cleanup temporary files
+  unlink(sam_file)
+  unlink(fastq_file)
 })
 
 

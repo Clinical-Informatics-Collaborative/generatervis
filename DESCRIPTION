@@ -1,11 +1,11 @@
 Package: generatervis
 Type: Package
-Title: Generate and visualise synthetic data, and create metadata files for research data management workflow.
+Title: Generate and visualise synthetic Whole Genome Sequence data
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: c(person("Jyoti", "Bhogal", "bhogaljyoti1@gmail.com", role = c("aut", "cre"))
+Maintainer: Jyoti Bhogal <bhogaljyoti1@gmail.com>
+Description: Generate and visualise synthetic Whole Genome Sequence data
+    This package provides a research data management workflow to create synthetic Whole Genome Sequence clinical data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

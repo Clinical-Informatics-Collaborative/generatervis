@@ -11,7 +11,12 @@ coverage](https://codecov.io/gh/Clinical-Informatics-Collaborative/generatervis/
 
 <!-- badges: end -->
 
-The goal of `generatervis` is to generate and visualise Clinical data.
+## Overview
+
+The `generatervis` package provides functions to create empty `.fastq`
+files, generate random reads, fill raw `.fastq` files with random reads,
+plot `.fastq` sequences, convert `.fastq` files to BAM files, convert
+BAM files to VCF files, and create metadata files for patient IDs.
 
 ## ⬇️ Installing `generatervis`
 
@@ -22,155 +27,76 @@ You can install the development version of `generatervis` from
 # install.packages("pak")  
 pak::pak("Clinical-Informatics-Collaborative/generatervis")  
 #> 
-#> ℹ No downloads are needed
-#> ✔ 1 pkg: kept 1 [2.7s]
+#> → Will update 1 package.
+#> → The package (0 B) is cached.
+#> + generatervis 0.1.0 → 0.1.0 👷🔧 (GitHub: f80a370)
+#> ℹ No downloads are needed, 1 pkg is cached
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@f80a370) (19ms)
+#> ✔ 1 pkg: upd 1 [2.8s]
 ```
 
-## Demo of the workflow
+## Usage
 
-The `generatervis` package provides functions to create empty `.fastq`
-files, generate random reads, fill raw `.fastq` files with random reads,
-plot `.fastq` sequences, convert `.fastq` files to BAM files, convert
-BAM files to VCF files, and create metadata files for patient IDs.
-
-### 🧑‍💻 Creating an empty raw `.fastq` file
-
-- Define the patient ID for which you want to create an empty raw
-  `.fastq` file.
-  - When output directory is not specified, the `.fastq` file will be
-    saved in the current working directory.
+Create an empty raw `.fastq` file for the specified patient.
 
 ``` r
-# Create an empty `.fastq` file for patient ID "patient_123"
-  generatervis::create_empty_fastq("patient_123")
-#> Empty FASTQ file created at: ./patient_123.fastq
+generatervis::create_empty_fastq(patient_id="patient_123")
 ```
 
-- When output directory is specified, the `.fastq` file will be saved in
-  the specified directory.
+Generate a random sample of `reads` for a Whole Genome Sequencing (WGS)
+dataset for the specified patient ID.
 
 ``` r
-# Create an empty `.fastq` file for patient ID "patient_456" in a specific directory
-  generatervis::create_empty_fastq("patient_456", output_dir = ".")
-#> Empty FASTQ file created at: ./patient_456.fastq
+generatervis::rreads(patient_id="patient_123", n = 5)
 ```
 
-### 🧑‍💻 Generating a random sample of `reads` for a Whole Genome Sequencing (WGS) dataset
-
-To create an empty random reads, define the patient ID, specify the
-number of reads to generate, and optionally set the read length (default
-is 8, and it must be a multiple of 4). The resulting reads will be saved
-in the current working directory.
-
-See the below examples:
+Populate the `.fastq` file with the random reads.
 
 ``` r
-# Generate 5 random reads for patient ID "patient_123"
- generatervis::rreads("patient_123", n = 5)
-#>  [1] "@patient_123_read1" "CGTAGCCA"           "+"                 
-#>  [4] "IIIIIIII"           "@patient_123_read2" "CATTTACA"          
-#>  [7] "+"                  "IIIIIIII"           "@patient_123_read3"
-#> [10] "CGCTGCCA"           "+"                  "IIIIIIII"          
-#> [13] "@patient_123_read4" "CTGTGGGT"           "+"                 
-#> [16] "IIIIIIII"           "@patient_123_read5" "TTCCGTTC"          
-#> [19] "+"                  "IIIIIIII"
+generatervis::fill_fastq(patient_id="patient_123",output_dir = tempdir(), n = 2, read_length = 8)
 ```
 
+(Optional) Plot the nucleotide sequences in the `.fastq` file in a grid
+format.
+
 ``` r
-# Generate 5 random reads for patient ID "patient_456" with a read length of 12
-  set.seed(1067)
- generatervis::rreads("patient_456", n = 5, read_length = 12)
-#>  [1] "@patient_456_read1" "TCGAGGCCTGGC"       "+"                 
-#>  [4] "IIIIIIIIIIII"       "@patient_456_read2" "CGAAATTTACAG"      
-#>  [7] "+"                  "IIIIIIIIIIII"       "@patient_456_read3"
-#> [10] "TTGTCTATACAA"       "+"                  "IIIIIIIIIIII"      
-#> [13] "@patient_456_read4" "CACAAATATTAG"       "+"                 
-#> [16] "IIIIIIIIIIII"       "@patient_456_read5" "CGAGGGATCACG"      
-#> [19] "+"                  "IIIIIIIIIIII"
+generatervis::fastq_plot(patient_id="patient_123", output_dir = tempdir(), n = 2, read_length = 8)
 ```
 
-### ➕️ Filling a raw `.fastq` file with random reads
-
-To fill a raw `.fastq` file, define the patient ID, specify the number
-of reads to generate, and optionally set the read length (default is 8
-and must be a multiple of 4). The generated reads will be saved in a
-`.fastq` file in the current working directory by default, or in a
-specified directory if provided.
+Convert the (raw) `.fastq` file to a (processed) `.bam` file using a
+dummy `.sam` format.
 
 ``` r
-# Fill a raw `.fastq` file for patient ID "patient_123" with 2 reads of length 8
- generatervis::fill_fastq("patient_123",output_dir = ".", n = 2, read_length = 8)
-#> File already exists. Appending reads to the existing file.
-#> Populated ./patient_123.fastq with 2 reads.
-```
-
-### 📊 Visualising raw `.fastq` data by plotting nucleotide sequences in a grid format
-
-To plot nucleotide sequences as a heatmap, define the patient ID and
-specify the number of reads to include in the plot; you may also
-optionally set the read length (default is 8 and must be a multiple of
-4). The resulting plot will be saved in the current working directory by
-default, or in a specified directory if provided.
-
-``` r
-# Plot nucleotide sequences for patient ID "patient_123" with 2 reads of length 8
- generatervis::fastq_plot("patient_123", output_dir = ".", n = 2, read_length = 8)
-#> Plot saved to: ./fastq_plot_patient_123.png
-```
-
-### ⚙️ Converting a raw `.fastq` file to a processed `.bam` file using a dummy `.sam` format
-
-To convert a raw `.fastq` file to a processed `.bam` file, define the
-patient ID and specify the number of reads to include in the plot; you
-may also optionally set the read length (default is 8 and must be a
-multiple of 4). This will create a dummy `.sam` file. The `.sam` file
-will contain the same number of reads as the `.fastq` file, and the
-sequence and quality scores will be identical.
-
-``` r
-# Convert a `.fastq` file to a `.bam` file
 output_dir <- tempdir()
-n <- 2
-read_length <- 8
-patient_id <- "test_patient"
+patient_id <- "patient_123"
 fastq_file <- file.path(output_dir, paste0(patient_id, ".fastq"))
-generatervis::fill_fastq(patient_id, output_dir, n, read_length)
-#> Creating a new FASTQ file.
-#> Empty FASTQ file created at: /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//RtmpBKGT5t/test_patient.fastq
-#> Populated /var/folders/7k/kpyh33yd4mlbp_p2j8m4810m0000gn/T//RtmpBKGT5t/test_patient.fastq with 2 reads.
-generatervis::fastq_to_bam(fastq_file, sam_file = paste0(patient_id,".sam"), reference = "chr1")
-#> Dummy SAM file written to: test_patient.sam
+generatervis::fill_fastq(patient_id, output_dir, n =2, read_length=8)
+generatervis::fastq_to_bam(fastq_file, patient_id, output_dir, sam_file = paste0(output_dir, "/", patient_id, ".sam"), reference = "chr1")
 ```
 
 To create the corresponding `.bam` file, use the `samtools` command-line
-tool. The `.bam` file will be created in the same directory as the
-`.sam` file. For this, run the following code in the command line
-interface:
+tool.
 
 ``` bash
-# samtools view -Sb dummy.sam > dummy.bam
+# samtools view -Sb path_to/file_name.sam > path_to/file_name.bam
 ```
 
-### ⚙️ Converting a processed `.bam` file to a summarised `.vcf` file format
+Convert the (processed) `.bam` file to a (summarised) `.vcf` file
+format.
 
-To convert a `.bam` file, define the patient ID and specify the desired
-output `.vcf` file name.
+``` r
+patient_id <- “patient_123”
+generatervis::bam_to_vcf(patient_id, output_dir = tempdir(), vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))
+```
+
+Create the metadata files to upload to
+[`data_storage_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)
 
 ``` r
 patient_id <- "patient_123"
-generatervis::bam_to_vcf(patient_id = patient_id, vcf_file ="output.vcf")
-#> Mock VCF written to patient_123.vcf
+output_dir <- tempdir()
+metadata <- generatervis::create_metadata(patient_id, output_dir)
 ```
-
-### ⬆️ Creating the metadata files to upload to [`data_storage_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)
-
-``` r
-patient_id <- "patient_123"
-tmp_dir <- tempdir()
-metadata <- generatervis::create_metadata(patient_id, output_dir = tmp_dir)
-```
-
-The metadata files will be written in the current working directory.
 
 When these metadata `.txt` files are ready, they can be uploaded to
 [`data_storarge_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)

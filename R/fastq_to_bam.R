@@ -4,7 +4,9 @@
 #' It reads the FASTQ file, extracts the sequence identifiers and sequences,
 #' and creates a dummy SAM file.
 #' @param fastq_file A character string specifying the path to the FASTQ file.
-#' @param sam_file A character string specifying the path to the output SAM file. Default is "dummy.sam".
+#' @param patient_id A character string specifying the patient ID. This will be used as the base name for the output SAM file.
+#' @param output_dir A character string specifying the directory where the output SAM file will be saved. Default is a temporary directory.
+#' @param sam_file A character string specifying the path to the output SAM file.
 #' @param reference A character string specifying the reference sequence name. Default is "chr1".
 #' @return NULL
 #' @examples
@@ -12,10 +14,11 @@
 #' output_dir <- tempdir()
 #' n <- 2
 #' read_length <- 8
-#' patient_id <- "test_patient"
+#' patient_id <- "patient_123"
 #' fastq_file <- file.path(output_dir, paste0(patient_id, ".fastq"))
 #' fill_fastq(patient_id, output_dir, n, read_length)
-#' fastq_to_bam(fastq_file, sam_file = "output.sam", reference = "chr1")
+#' sam_file <- paste0(output_dir, "/", patient_id, ".sam")
+#' fastq_to_bam(fastq_file, patient_id, output_dir, sam_file)
 #' @details
 #' The function reads the FASTQ file and extracts the sequence identifiers and sequences.
 #' It then creates a dummy SAM file with the following fields:
@@ -31,7 +34,7 @@
 #' - SEQ: Sequence
 #' - QUAL: Quality scores
 #' @export
-fastq_to_bam <- function(fastq_file, sam_file = "dummy.sam", reference = "chr1") {
+fastq_to_bam <- function(fastq_file, patient_id, output_dir = tempdir(), sam_file = paste0(output_dir, "/", patient_id, ".sam"), reference = "chr1") {
   fq_lines <- readLines(fastq_file)
   if (length(fq_lines) %% 4 != 0) {
     stop("FASTQ file format invalid: lines not divisible by 4.")

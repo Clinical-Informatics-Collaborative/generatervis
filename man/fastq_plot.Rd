@@ -4,16 +4,16 @@
 \alias{fastq_plot}
 \title{fastq_plot}
 \usage{
-fastq_plot(patient_id, output_dir = ".", n, read_length)
+fastq_plot(patient_id, output_dir = tempdir(), n, read_length)
 }
 \arguments{
 \item{patient_id}{A character string representing the patient ID.}
 
-\item{output_dir}{A character string specifying the directory where the plot file will be saved. Default is the current working directory.}
+\item{output_dir}{A character string specifying the directory where the plot file will be saved.}
 
 \item{n}{An integer specifying the number of reads to plot.}
 
-\item{read_length}{An integer specifying the length of each read. Default is 8.}
+\item{read_length}{An integer specifying the length of each read. It should be a multiple of 4. Default is 8.}
 }
 \description{
 Function to plot nucleotide sequences from a raw `.fastq` file in a grid format
@@ -33,5 +33,5 @@ The plot is saved as a PNG file in the specified output directory.
 }
 \examples{
 # Plot FASTQ sequences for patient ID "patient_123" with 2 reads of length 8
-fastq_plot("patient_123", output_dir = ".", n = 2, read_length = 8)
+fastq_plot("patient_123", output_dir = tempdir(), n = 2, read_length = 8)
 }

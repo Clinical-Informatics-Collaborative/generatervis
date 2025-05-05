@@ -1,14 +1,14 @@
 test_that("bam_to_vcf() works", {
   # Create a temporary VCF file
   #vcf_file <- tempfile(fileext = ".vcf")
-  output_dir <- "."
+  output_dir <- tempdir()
   n <- 2
   read_length <- 8
-  patient_id <- "test_patient"
-  vcf_file <- file.path(output_dir, paste0(patient_id, ".vcf"))
+  patient_id <- "patient_123"
+  vcf_file <- file.path(output_dir, "/", paste0(patient_id, ".vcf"))
 
   # Call the function
-  bam_to_vcf(patient_id, vcf_file)
+  bam_to_vcf(patient_id, output_dir, vcf_file)
 
   # Check if the VCF file was created
   expect_true(file.exists(vcf_file))

@@ -5,15 +5,15 @@
 #' then generates a specified number of random reads,
 #' and writes them to the file.
 #' @param patient_id A character string representing the patient ID.
-#' @param output_dir A character string specifying the directory where the FASTQ file will be saved. Default is the current working directory.
+#' @param output_dir A character string specifying the directory where the FASTQ file will be saved.
 #' @param n An integer specifying the number of reads to generate.
-#' @param read_length An integer specifying the length of each read. Default is 8. It should be multiple of 4.
+#' @param read_length An integer specifying the length of each read. It should be multiple of 4. Default is 8.
 #'
 #' @return NULL
 #'
 #' @examples
 #' # Fill a FASTQ file for patient ID "patient_123" with 2 reads of length 8
-#' fill_fastq("patient_123",output_dir = ".", n = 2, read_length = 8)
+#' fill_fastq("patient_123",output_dir = tempdir(), n = 2, read_length = 8)
 #'
 #' @details
 #' The function first checks if the FASTQ file already exists.
@@ -28,7 +28,7 @@
 #' }
 #'
 #' @export
-fill_fastq <- function(patient_id, output_dir = ".", n, read_length) {
+fill_fastq <- function(patient_id, output_dir = tempdir(), n, read_length) {
 
   file_name <- file.path(output_dir, paste0(patient_id, ".fastq"))
   # Create an empty FASTQ file

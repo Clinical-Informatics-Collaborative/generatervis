@@ -11,7 +11,7 @@
 #' - meta_mutations.txt: Metadata for mutation data.
 #'
 #' @param patient_id A vector of patient IDs to be included in the clinical data.
-#' @param output_dir The directory where the metadata files will be created. Default is "./cbioportal_study".
+#' @param output_dir The directory where the metadata files will be created. Default is "/cbioportal_study" in the `tempdir()`.
 #' @return NULL
 #' @examples
 #' # create_metadata(c("patient_123", "patient_456"))
@@ -21,7 +21,7 @@
 #' @importFrom stats setNames
 #' @importFrom graphics axis rect text
 #' @importFrom grDevices dev.off png
-create_metadata <- function(patient_id,output_dir = paste0(".","/cbioportal_study")) {
+create_metadata <- function(patient_id,output_dir = paste0(tempdir(),"/cbioportal_study")) {
   # Create the output directory if it doesn't exist
 #  if (!dir.exists(output_dir)) {
 #    dir.create(output_dir, recursive = TRUE)

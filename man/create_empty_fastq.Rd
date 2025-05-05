@@ -4,12 +4,12 @@
 \alias{create_empty_fastq}
 \title{Create an empty .fastq file using patient ID}
 \usage{
-create_empty_fastq(patient_id, output_dir = ".")
+create_empty_fastq(patient_id, output_dir = tempdir())
 }
 \arguments{
 \item{patient_id}{A character vector representing the patient IDs.}
 
-\item{output_dir}{A character string specifying the directory where the FASTQ file will be saved. Default is the current working directory.}
+\item{output_dir}{A character string specifying the directory where the FASTQ file will be saved.}
 }
 \description{
 This function creates an empty FASTQ file with the specified patient ID.
@@ -29,5 +29,5 @@ The function constructs a FASTQ file with the following format:
  # Create an empty FASTQ file for patient ID "patient_123"
  create_empty_fastq("patient_123")
  # Create an empty FASTQ file for patient ID "patient_456" in a specific directory
- create_empty_fastq("patient_456", output_dir = ".")
+ create_empty_fastq("patient_456", output_dir = tempdir())
 }

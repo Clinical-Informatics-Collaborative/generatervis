@@ -4,16 +4,16 @@
 \alias{fill_fastq}
 \title{Function to fill a FASTQ file with random reads}
 \usage{
-fill_fastq(patient_id, output_dir = ".", n, read_length)
+fill_fastq(patient_id, output_dir = tempdir(), n, read_length)
 }
 \arguments{
 \item{patient_id}{A character string representing the patient ID.}
 
-\item{output_dir}{A character string specifying the directory where the FASTQ file will be saved. Default is the current working directory.}
+\item{output_dir}{A character string specifying the directory where the FASTQ file will be saved.}
 
 \item{n}{An integer specifying the number of reads to generate.}
 
-\item{read_length}{An integer specifying the length of each read. Default is 8. It should be multiple of 4.}
+\item{read_length}{An integer specifying the length of each read. It should be multiple of 4. Default is 8.}
 }
 \description{
 This function populates a FASTQ file with random reads for a given patient ID.
@@ -35,6 +35,6 @@ The generated reads are in FASTQ format, which consists of four lines per read:
 }
 \examples{
 # Fill a FASTQ file for patient ID "patient_123" with 2 reads of length 8
-fill_fastq("patient_123",output_dir = ".", n = 2, read_length = 8)
+fill_fastq("patient_123",output_dir = tempdir(), n = 2, read_length = 8)
 
 }

@@ -4,11 +4,14 @@
 #' It creates a mock VCF file with dummy data.
 #'
 #' @param patient_id A character string specifying the patient ID. This will be used as the base name for the output VCF file.
+#' @param output_dir A character string specifying the directory where the VCF file will be saved.
 #' @param vcf_file A character string specifying the path to the output VCF file. Default is "dummy.vcf".
 #' @return NULL
 #' @examples
 #' # Convert BAM-like data to VCF format
-#' # bam_to_vcf("output.vcf")
+#' patient_id <- "patient_123"
+#' output_dir <- tempdir()
+#' bam_to_vcf(patient_id, output_dir, vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))
 #' @details
 #' The function creates a mock VCF file with dummy data.
 #' The VCF file contains the following fields:
@@ -23,12 +26,7 @@
 #' The function writes the VCF file to the specified path.
 #'
 #' @export
-#'
-#' @examples
-#' patient_id <- "patient_123"
-#' bam_to_vcf(patient_id = patient_id, vcf_file ="output.vcf")
-#'
-bam_to_vcf <- function(patient_id, vcf_file = "dummy.vcf") {
+bam_to_vcf <- function(patient_id, output_dir = tempdir(), vcf_file = paste0(output_dir, "/", patient_id, ".vcf")) {
 
   # Simulated BAM-like data (as a data frame)
   bam_data <- data.frame(
@@ -67,7 +65,6 @@ bam_to_vcf <- function(patient_id, vcf_file = "dummy.vcf") {
   })
 
   # Write to file
-  vcf_file <- paste0(patient_id, ".vcf")
   writeLines(c(vcf_header, vcf_body), con = vcf_file)
 
   cat("Mock VCF written to", vcf_file)

@@ -4,12 +4,22 @@
 \alias{fastq_to_bam}
 \title{Convert FASTQ to BAM}
 \usage{
-fastq_to_bam(fastq_file, sam_file = "dummy.sam", reference = "chr1")
+fastq_to_bam(
+  fastq_file,
+  patient_id,
+  output_dir = tempdir(),
+  sam_file = paste0(output_dir, "/", patient_id, ".sam"),
+  reference = "chr1"
+)
 }
 \arguments{
 \item{fastq_file}{A character string specifying the path to the FASTQ file.}
 
-\item{sam_file}{A character string specifying the path to the output SAM file. Default is "dummy.sam".}
+\item{patient_id}{A character string specifying the patient ID. This will be used as the base name for the output SAM file.}
+
+\item{output_dir}{A character string specifying the directory where the output SAM file will be saved. Default is a temporary directory.}
+
+\item{sam_file}{A character string specifying the path to the output SAM file.}
 
 \item{reference}{A character string specifying the reference sequence name. Default is "chr1".}
 }
@@ -38,8 +48,9 @@ It then creates a dummy SAM file with the following fields:
 output_dir <- tempdir()
 n <- 2
 read_length <- 8
-patient_id <- "test_patient"
+patient_id <- "patient_123"
 fastq_file <- file.path(output_dir, paste0(patient_id, ".fastq"))
 fill_fastq(patient_id, output_dir, n, read_length)
-fastq_to_bam(fastq_file, sam_file = "output.sam", reference = "chr1")
+sam_file <- paste0(output_dir, "/", patient_id, ".sam")
+fastq_to_bam(fastq_file, patient_id, output_dir, sam_file)
 }

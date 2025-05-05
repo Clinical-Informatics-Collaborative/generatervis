@@ -4,10 +4,16 @@
 \alias{bam_to_vcf}
 \title{Convert BAM-like data to VCF format}
 \usage{
-bam_to_vcf(patient_id, vcf_file = "dummy.vcf")
+bam_to_vcf(
+  patient_id,
+  output_dir = tempdir(),
+  vcf_file = paste0(output_dir, "/", patient_id, ".vcf")
+)
 }
 \arguments{
 \item{patient_id}{A character string specifying the patient ID. This will be used as the base name for the output VCF file.}
+
+\item{output_dir}{A character string specifying the directory where the VCF file will be saved.}
 
 \item{vcf_file}{A character string specifying the path to the output VCF file. Default is "dummy.vcf".}
 }
@@ -30,8 +36,7 @@ The function writes the VCF file to the specified path.
 }
 \examples{
 # Convert BAM-like data to VCF format
-# bam_to_vcf("output.vcf")
 patient_id <- "patient_123"
-bam_to_vcf(patient_id = patient_id, vcf_file ="output.vcf")
-
+output_dir <- tempdir()
+bam_to_vcf(patient_id, output_dir, vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))
 }
