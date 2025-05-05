@@ -3,7 +3,7 @@
 #' This function converts a FASTQ file to a BAM file using a dummy SAM format.
 #' It reads the FASTQ file, extracts the sequence identifiers and sequences,
 #' and creates a dummy SAM file.
-#' @param fastq_file A character string specifying the path to the FASTQ file.
+#' @param fastq_file A character string specifying the path to the `.fastq` file.
 #' @param patient_id A character string specifying the patient ID. This will be used as the base name for the output SAM file.
 #' @param output_dir A character string specifying the directory where the output SAM file will be saved. Default is a temporary directory.
 #' @param sam_file A character string specifying the path to the output SAM file.

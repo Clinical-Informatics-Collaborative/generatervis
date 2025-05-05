@@ -2,7 +2,7 @@
 % Please edit documentation in R/bam_to_vcf.R
 \name{bam_to_vcf}
 \alias{bam_to_vcf}
-\title{Convert BAM-like data to VCF format}
+\title{Convert `.bam`-like data to VCF format}
 \usage{
 bam_to_vcf(
   patient_id,
@@ -11,19 +11,19 @@ bam_to_vcf(
 )
 }
 \arguments{
-\item{patient_id}{A character string specifying the patient ID. This will be used as the base name for the output VCF file.}
+\item{patient_id}{A character string specifying the patient ID. This will be used as the base name for the output `.vcf` file.}
 
-\item{output_dir}{A character string specifying the directory where the VCF file will be saved.}
+\item{output_dir}{A character string specifying the directory where the `.vcf` file will be saved.}
 
-\item{vcf_file}{A character string specifying the path to the output VCF file. Default is "dummy.vcf".}
+\item{vcf_file}{A character string specifying the path to the output `.vcf` file. Default is "dummy.vcf".}
 }
 \description{
-This function simulates the conversion of BAM-like data to VCF format.
+This function simulates the conversion of `.bam`-like data to VCF format.
 It creates a mock VCF file with dummy data.
 }
 \details{
-The function creates a mock VCF file with dummy data.
-The VCF file contains the following fields:
+The function creates a mock `.vcf` file with dummy data.
+The `.vcf` file contains the following fields:
 - CHROM: Chromosome name
 - POS: Position on the chromosome
 - ID: Variant identifier (dummy value ".")
@@ -32,10 +32,10 @@ The VCF file contains the following fields:
 - QUAL: Quality score
 - dg: Total depth
 - gt: Genotype
-The function writes the VCF file to the specified path.
+The function writes the `.vcf` file to the specified path.
 }
 \examples{
-# Convert BAM-like data to VCF format
+# Convert `.bam`-like data to `.vcf` format
 patient_id <- "patient_123"
 output_dir <- tempdir()
 bam_to_vcf(patient_id, output_dir, vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))

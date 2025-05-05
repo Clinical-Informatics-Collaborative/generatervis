@@ -13,7 +13,7 @@ fastq_to_bam(
 )
 }
 \arguments{
-\item{fastq_file}{A character string specifying the path to the FASTQ file.}
+\item{fastq_file}{A character string specifying the path to the `.fastq` file.}
 
 \item{patient_id}{A character string specifying the patient ID. This will be used as the base name for the output SAM file.}
 

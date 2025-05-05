@@ -5,7 +5,7 @@
 #' then generates a specified number of random reads,
 #' and writes them to the file.
 #' @param patient_id A character string representing the patient ID.
-#' @param output_dir A character string specifying the directory where the FASTQ file will be saved.
+#' @param output_dir A character string specifying the directory where the `.fastq` file will be saved.
 #' @param n An integer specifying the number of reads to generate.
 #' @param read_length An integer specifying the length of each read. It should be multiple of 4. Default is 8.
 #'

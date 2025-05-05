@@ -27,5 +27,5 @@ The function creates a directory named "cbioportal_study" and writes the followi
 - meta_mutations.txt: Metadata for mutation data.
 }
 \examples{
-# create_metadata(c("patient_123", "patient_456"))
+# create_metadata(patient_id, output_dir)
 }

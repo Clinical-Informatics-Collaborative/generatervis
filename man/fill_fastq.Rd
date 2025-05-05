@@ -9,7 +9,7 @@ fill_fastq(patient_id, output_dir = tempdir(), n, read_length)
 \arguments{
 \item{patient_id}{A character string representing the patient ID.}
 
-\item{output_dir}{A character string specifying the directory where the FASTQ file will be saved.}
+\item{output_dir}{A character string specifying the directory where the `.fastq` file will be saved.}
 
 \item{n}{An integer specifying the number of reads to generate.}
 

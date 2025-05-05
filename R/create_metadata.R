@@ -14,7 +14,7 @@
 #' @param output_dir The directory where the metadata files will be created. Default is "/cbioportal_study" in the `tempdir()`.
 #' @return NULL
 #' @examples
-#' # create_metadata(c("patient_123", "patient_456"))
+#' # create_metadata(patient_id, output_dir)
 #' @export
 #'
 #' @importFrom utils write.table

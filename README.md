@@ -29,15 +29,15 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 #> 
 #> → Will update 1 package.
 #> → The package (0 B) is cached.
-#> + generatervis 0.1.0 → 0.1.0 👷🏻‍♀️🔧 (GitHub: f8a9e0f)
+#> + generatervis 0.1.0 → 0.1.0 👷🏻‍♂️🔧 (GitHub: ed615e3)
 #> ℹ No downloads are needed, 1 pkg is cached
 #> ✔ Got generatervis 0.1.0 (source) (45.80 kB)
 #> ℹ Packaging generatervis 0.1.0
-#> ✔ Packaged generatervis 0.1.0 (501ms)
+#> ✔ Packaged generatervis 0.1.0 (510ms)
 #> ℹ Building generatervis 0.1.0
-#> ✔ Built generatervis 0.1.0 (842ms)
-#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@f8a9e0f) (24ms)
-#> ✔ 1 pkg: upd 1, dld 1 (NA B) [6.5s]
+#> ✔ Built generatervis 0.1.0 (821ms)
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@ed615e3) (25ms)
+#> ✔ 1 pkg: upd 1, dld 1 (NA B) [6.2s]
 ```
 
 ## Usage
@@ -62,14 +62,14 @@ Populate the `.fastq` file with the random reads.
 ``` r
 output_dir <- tempdir()
 read_length <- 8
-generatervis::fill_fastq(patient_id, output_dir, n , read_length)
+generatervis::fill_fastq(patient_id, output_dir, n, read_length)
 ```
 
 (Optional) Plot the nucleotide sequences in the `.fastq` file in a grid
 format.
 
 ``` r
-generatervis::fastq_plot(patient_id, output_dir, n , read_length)
+generatervis::fastq_plot(patient_id, output_dir, n, read_length)
 ```
 
 Convert the (raw) `.fastq` file to a (processed) `.bam` file using a
@@ -99,7 +99,7 @@ Create the metadata files to upload to
 [`data_storage_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)
 
 ``` r
-metadata <- generatervis::create_metadata(patient_id, output_dir)
+generatervis::create_metadata(patient_id, output_dir)
 ```
 
 When these metadata `.txt` files are ready, they can be uploaded to
