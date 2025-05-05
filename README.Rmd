@@ -98,3 +98,37 @@ metadata <- generatervis::create_metadata(patient_id, output_dir)
 When these metadata `.txt` files are ready, they can be uploaded to
 [`data_storarge_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)
 by forking the repository and creating a pull request.
+
+## Documentation
+
+You can find detailed documentation and tutorials at the package website:
+[https://clinical-informatics-collaborative.github.io/generatervis/](https://clinical-informatics-collaborative.github.io/generatervis/)
+
+* **[Reference manual](https://clinical-informatics-collaborative.github.io/generatervis/)**: Full list of functions with detailed descriptions.
+
+For in-session help:
+
+```r
+# View documentation for a specific function
+?create_empty_fastq
+```
+
+## Contributing
+
+To be added.
+
+## Code of Conduct
+
+To be added.
+
+## License
+
+To be added.
+
+## Citation
+
+To be added.
+
+## Acknowledgments
+
+This package is written as a part of the volunteer programme by the [Research Computing Program, Walter and Eliza Hall Institute of Medical Research](https://wehi-researchcomputing.github.io/), mentored by [Rowland Mosbergen](https://github.com/rowlandm)

@@ -29,10 +29,15 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 #> 
 #> → Will update 1 package.
 #> → The package (0 B) is cached.
-#> + generatervis 0.1.0 → 0.1.0 👷🔧 (GitHub: f80a370)
+#> + generatervis 0.1.0 → 0.1.0 👷🏿🔧 (GitHub: 08cd0ba)
 #> ℹ No downloads are needed, 1 pkg is cached
-#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@f80a370) (19ms)
-#> ✔ 1 pkg: upd 1 [2.8s]
+#> ✔ Got generatervis 0.1.0 (source) (45.14 kB)
+#> ℹ Packaging generatervis 0.1.0
+#> ✔ Packaged generatervis 0.1.0 (375ms)
+#> ℹ Building generatervis 0.1.0
+#> ✔ Built generatervis 0.1.0 (586ms)
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@08cd0ba) (19ms)
+#> ✔ 1 pkg: upd 1, dld 1 (NA B) [5.6s]
 ```
 
 ## Usage
@@ -101,3 +106,43 @@ metadata <- generatervis::create_metadata(patient_id, output_dir)
 When these metadata `.txt` files are ready, they can be uploaded to
 [`data_storarge_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)
 by forking the repository and creating a pull request.
+
+## Documentation
+
+You can find detailed documentation and tutorials at the package
+website:
+<https://clinical-informatics-collaborative.github.io/generatervis/>
+
+- **[Reference
+  manual](https://clinical-informatics-collaborative.github.io/generatervis/)**:
+  Full list of functions with detailed descriptions.
+
+For in-session help:
+
+``` r
+# View documentation for a specific function
+?create_empty_fastq
+```
+
+## Contributing
+
+To be added.
+
+## Code of Conduct
+
+To be added.
+
+## License
+
+To be added.
+
+## Citation
+
+To be added.
+
+## Acknowledgments
+
+This package is written as a part of the volunteer programme by the
+[Research Computing Program, Walter and Eliza Hall Institute of Medical
+Research](https://wehi-researchcomputing.github.io/), mentored by
+[Rowland Mosbergen](https://github.com/rowlandm)
