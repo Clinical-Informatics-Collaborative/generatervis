@@ -1,16 +1,16 @@
-#' Convert FASTQ to BAM
+#' Convert `.fastq` to `.bam`
 #'
-#' This function converts a FASTQ file to a BAM file using a dummy SAM format.
-#' It reads the FASTQ file, extracts the sequence identifiers and sequences,
-#' and creates a dummy SAM file.
+#' This function converts a `.fastq` file to a `.bam` file using a dummy `.sam` format.
+#' It reads the `.fastq` file, extracts the sequence identifiers and sequences,
+#' and creates a dummy `.sam` file.
 #' @param fastq_file A character string specifying the path to the `.fastq` file.
-#' @param patient_id A character string specifying the patient ID. This will be used as the base name for the output SAM file.
-#' @param output_dir A character string specifying the directory where the output SAM file will be saved. Default is a temporary directory.
-#' @param sam_file A character string specifying the path to the output SAM file.
+#' @param patient_id A character string specifying the patient ID. This will be used as the base name for the output `.sam` file.
+#' @param output_dir A character string specifying the directory where the output `.sam` file will be saved. Default is a temporary directory.
+#' @param sam_file A character string specifying the path to the output `.sam` file.
 #' @param reference A character string specifying the reference sequence name. Default is "chr1".
 #' @return NULL
 #' @examples
-#' # Convert a FASTQ file to a BAM file
+#' # Convert a `.fastq` file to a `.bam` file
 #' output_dir <- tempdir()
 #' n <- 2
 #' read_length <- 8
@@ -20,8 +20,8 @@
 #' sam_file <- paste0(output_dir, "/", patient_id, ".sam")
 #' fastq_to_bam(fastq_file, patient_id, output_dir, sam_file)
 #' @details
-#' The function reads the FASTQ file and extracts the sequence identifiers and sequences.
-#' It then creates a dummy SAM file with the following fields:
+#' The function reads the `.fastq` file and extracts the sequence identifiers and sequences.
+#' It then creates a dummy `.sam` file with the following fields:
 #' - QNAME: Query name (read identifier)
 #' - FLAG: Bitwise flag (0 for unmapped)
 #' - RNAME: Reference sequence name
@@ -37,12 +37,12 @@
 fastq_to_bam <- function(fastq_file, patient_id, output_dir = tempdir(), sam_file = paste0(output_dir, "/", patient_id, ".sam"), reference = "chr1") {
   fq_lines <- readLines(fastq_file)
   if (length(fq_lines) %% 4 != 0) {
-    stop("FASTQ file format invalid: lines not divisible by 4.")
+    stop("`.fastq` file format invalid: lines not divisible by 4.")
   }
 
   con <- file(sam_file, open = "wt")
 
-  # Write SAM header
+  # Write `.sam` header
   writeLines(paste0("@HD\tVN:1.6\tSO:unsorted"), con)
   writeLines(paste0("@SQ\tSN:", reference, "\tLN:1000000"), con)
   writeLines("@RG", con)
@@ -65,7 +65,7 @@ fastq_to_bam <- function(fastq_file, patient_id, output_dir = tempdir(), sam_fil
     pnext <- 0
     tlen <- 0
 
-    # Construct SAM line
+    # Construct `.sam` line
     sam_line <- paste(read_id, flag, rname, pos, mapq, cigar,
                       rnext, pnext, tlen, seq, qual, sep = "\t")
 

@@ -1,7 +1,7 @@
-#' Convert `.bam`-like data to VCF format
+#' Convert `.bam`-like data to `.vcf` format
 #'
-#' This function simulates the conversion of `.bam`-like data to VCF format.
-#' It creates a dummy VCF file with dummy data.
+#' This function simulates the conversion of `.bam`-like data to `.vcf` format.
+#' It creates a dummy `.vcf` file with dummy data.
 #'
 #' @param patient_id A character string specifying the patient ID. This will be used as the base name for the output `.vcf` file.
 #' @param output_dir A character string specifying the directory where the `.vcf` file will be saved.

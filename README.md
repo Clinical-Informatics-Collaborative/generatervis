@@ -15,8 +15,8 @@ coverage](https://codecov.io/gh/Clinical-Informatics-Collaborative/generatervis/
 
 The `generatervis` package provides functions to create empty `.fastq`
 files, generate random reads, fill raw `.fastq` files with random reads,
-plot `.fastq` sequences, convert `.fastq` files to BAM files, convert
-BAM files to VCF files, and create metadata files for patient IDs.
+plot `.fastq` sequences, convert `.fastq` files to `.bam` files, convert
+`.bam` files to `.vcf` files, and create metadata files for patient IDs.
 
 ## ⬇️ Installing `generatervis`
 
@@ -29,10 +29,15 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 #> 
 #> → Will update 1 package.
 #> → The package (0 B) is cached.
-#> + generatervis 0.1.0 → 0.1.0 👷🏿‍♂️🔧 (GitHub: e0f8fc8)
+#> + generatervis 0.1.0 → 0.1.0 👷‍♀️🔧 (GitHub: 38a905c)
 #> ℹ No downloads are needed, 1 pkg is cached
-#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@e0f8fc8) (25ms)
-#> ✔ 1 pkg: upd 1 [2.9s]
+#> ✔ Got generatervis 0.1.0 (source) (45.75 kB)
+#> ℹ Packaging generatervis 0.1.0
+#> ✔ Packaged generatervis 0.1.0 (689ms)
+#> ℹ Building generatervis 0.1.0
+#> ✔ Built generatervis 0.1.0 (523ms)
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@38a905c) (15ms)
+#> ✔ 1 pkg: upd 1, dld 1 (NA B) [8s]
 ```
 
 ## Usage

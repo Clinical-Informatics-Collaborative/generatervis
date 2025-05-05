@@ -2,7 +2,7 @@
 % Please edit documentation in R/fastq_to_bam.R
 \name{fastq_to_bam}
 \alias{fastq_to_bam}
-\title{Convert FASTQ to BAM}
+\title{Convert `.fastq` to `.bam`}
 \usage{
 fastq_to_bam(
   fastq_file,
@@ -15,22 +15,22 @@ fastq_to_bam(
 \arguments{
 \item{fastq_file}{A character string specifying the path to the `.fastq` file.}
 
-\item{patient_id}{A character string specifying the patient ID. This will be used as the base name for the output SAM file.}
+\item{patient_id}{A character string specifying the patient ID. This will be used as the base name for the output `.sam` file.}
 
-\item{output_dir}{A character string specifying the directory where the output SAM file will be saved. Default is a temporary directory.}
+\item{output_dir}{A character string specifying the directory where the output `.sam` file will be saved. Default is a temporary directory.}
 
-\item{sam_file}{A character string specifying the path to the output SAM file.}
+\item{sam_file}{A character string specifying the path to the output `.sam` file.}
 
 \item{reference}{A character string specifying the reference sequence name. Default is "chr1".}
 }
 \description{
-This function converts a FASTQ file to a BAM file using a dummy SAM format.
-It reads the FASTQ file, extracts the sequence identifiers and sequences,
-and creates a dummy SAM file.
+This function converts a `.fastq` file to a `.bam` file using a dummy `.sam` format.
+It reads the `.fastq` file, extracts the sequence identifiers and sequences,
+and creates a dummy `.sam` file.
 }
 \details{
-The function reads the FASTQ file and extracts the sequence identifiers and sequences.
-It then creates a dummy SAM file with the following fields:
+The function reads the `.fastq` file and extracts the sequence identifiers and sequences.
+It then creates a dummy `.sam` file with the following fields:
 - QNAME: Query name (read identifier)
 - FLAG: Bitwise flag (0 for unmapped)
 - RNAME: Reference sequence name
@@ -44,7 +44,7 @@ It then creates a dummy SAM file with the following fields:
 - QUAL: Quality scores
 }
 \examples{
-# Convert a FASTQ file to a BAM file
+# Convert a `.fastq` file to a `.bam` file
 output_dir <- tempdir()
 n <- 2
 read_length <- 8

@@ -19,7 +19,7 @@ fastq_plot(patient_id, output_dir = tempdir(), n, read_length)
 Function to plot nucleotide sequences from a raw `.fastq` file in a grid format
 }
 \details{
-The function reads a FASTQ file and plots the sequences in a grid format.
+The function reads a `.fastq` file and plots the sequences in a grid format.
 Each base is represented by a different color:
 
 \itemize{
@@ -32,6 +32,6 @@ Each base is represented by a different color:
 The plot is saved as a PNG file in the specified output directory.
 }
 \examples{
-# Plot FASTQ sequences for patient ID "patient_123" with 2 reads of length 8
+# Plot nucleotide sequences for patient ID "patient_123" with 2 reads of length 8
 fastq_plot("patient_123", output_dir = tempdir(), n = 2, read_length = 8)
 }

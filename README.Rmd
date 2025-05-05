@@ -25,8 +25,8 @@ knitr::opts_chunk$set(
 
 The `generatervis` package provides functions to create empty `.fastq`
 files, generate random reads, fill raw `.fastq` files with random reads,
-plot `.fastq` sequences, convert `.fastq` files to BAM files, convert
-BAM files to VCF files, and create metadata files for patient IDs.
+plot `.fastq` sequences, convert `.fastq` files to `.bam` files, convert
+`.bam` files to `.vcf` files, and create metadata files for patient IDs.
 
 ## ⬇️ Installing `generatervis`
 

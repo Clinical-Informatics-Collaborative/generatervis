@@ -2,7 +2,7 @@
 % Please edit documentation in R/bam_to_vcf.R
 \name{bam_to_vcf}
 \alias{bam_to_vcf}
-\title{Convert `.bam`-like data to VCF format}
+\title{Convert `.bam`-like data to `.vcf` format}
 \usage{
 bam_to_vcf(
   patient_id,
@@ -18,8 +18,8 @@ bam_to_vcf(
 \item{vcf_file}{A character string specifying the path to the output `.vcf` file. Default is "dummy.vcf".}
 }
 \description{
-This function simulates the conversion of `.bam`-like data to VCF format.
-It creates a dummy VCF file with dummy data.
+This function simulates the conversion of `.bam`-like data to `.vcf` format.
+It creates a dummy `.vcf` file with dummy data.
 }
 \details{
 The function creates a dummy `.vcf` file with dummy data.

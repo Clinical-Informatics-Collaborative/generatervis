@@ -2,7 +2,7 @@
 % Please edit documentation in R/rreads.R
 \name{rreads}
 \alias{rreads}
-\title{Function to generate a random sample of reads in FASTQ format}
+\title{Function to generate a random sample of reads in `.fastq` format}
 \usage{
 rreads(patient_id, n, read_length = 8)
 }
@@ -14,16 +14,16 @@ rreads(patient_id, n, read_length = 8)
 \item{read_length}{An integer specifying the length of each read. It should be multiple of 4. Default is 8.}
 }
 \value{
-A character vector containing the generated FASTQ lines.
+A character vector containing the generated `.fastq` lines.
 }
 \description{
-This function generates a specified number of random reads in FASTQ format.
+This function generates a specified number of random reads in `.fastq` format.
 Each read consists of a sequence identifier, a random DNA sequence, a separator line, and quality scores.
 }
 \details{
 The function generates random DNA sequences using the nucleotides A, T, G, and C.
 The quality scores are represented as ASCII characters, with 'I' indicating high quality.
-The output is formatted as a FASTQ file, which consists of four lines per read:
+The output is formatted as a `.fastq` file, which consists of four lines per read:
 \itemize{
  \item Line 1: Sequence identifier (e.g., @patient_id_read1)
  \item Line 2: Random DNA sequence
@@ -31,7 +31,7 @@ The output is formatted as a FASTQ file, which consists of four lines per read:
  \item Line 4: Quality scores
  }
  @seealso
- \code{\link{create_empty_fastq}} for creating an empty FASTQ file.
+ \code{\link{create_empty_fastq}} for creating an empty `.fastq` file.
 }
 \examples{
 # Generate 5 random reads for patient ID "patient_123"

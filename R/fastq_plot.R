@@ -8,10 +8,10 @@
 #'
 #' @return NULL
 #' @examples
-#' # Plot FASTQ sequences for patient ID "patient_123" with 2 reads of length 8
+#' # Plot nucleotide sequences for patient ID "patient_123" with 2 reads of length 8
 #' fastq_plot("patient_123", output_dir = tempdir(), n = 2, read_length = 8)
 #' @details
-#' The function reads a FASTQ file and plots the sequences in a grid format.
+#' The function reads a `.fastq` file and plots the sequences in a grid format.
 #' Each base is represented by a different color:
 #'
 #' \itemize{

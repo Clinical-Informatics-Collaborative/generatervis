@@ -1,12 +1,12 @@
-#' Function to generate a random sample of reads in FASTQ format
+#' Function to generate a random sample of reads in `.fastq` format
 #'
-#' This function generates a specified number of random reads in FASTQ format.
+#' This function generates a specified number of random reads in `.fastq` format.
 #' Each read consists of a sequence identifier, a random DNA sequence, a separator line, and quality scores.
 #'
 #' @param patient_id A character string representing the patient ID.
 #' @param n An integer specifying the number of reads to generate.
 #' @param read_length An integer specifying the length of each read. It should be multiple of 4. Default is 8.
-#' @return A character vector containing the generated FASTQ lines.
+#' @return A character vector containing the generated `.fastq` lines.
 #' @examples
 #' # Generate 5 random reads for patient ID "patient_123"
 #' rreads("patient_123", n = 5)
@@ -17,7 +17,7 @@
 #' @details
 #' The function generates random DNA sequences using the nucleotides A, T, G, and C.
 #' The quality scores are represented as ASCII characters, with 'I' indicating high quality.
-#' The output is formatted as a FASTQ file, which consists of four lines per read:
+#' The output is formatted as a `.fastq` file, which consists of four lines per read:
 #' \itemize{
 #'  \item Line 1: Sequence identifier (e.g., @patient_id_read1)
 #'  \item Line 2: Random DNA sequence
@@ -25,7 +25,7 @@
 #'  \item Line 4: Quality scores
 #'  }
 #'  @seealso
-#'  \code{\link{create_empty_fastq}} for creating an empty FASTQ file.
+#'  \code{\link{create_empty_fastq}} for creating an empty `.fastq` file.
 rreads <- function(patient_id, n, read_length = 8) {
   bases <- c("A", "T", "G", "C")  # Possible nucleotides
   fastq_lines <- character(4 * n)  # 4 lines per read
