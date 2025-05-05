@@ -56,7 +56,7 @@ Populate the `.fastq` file with the random reads.
 
 ``` r 
 output_dir <- tempdir()
-generatervis::fill_fastq(patient_id,output_dir, n = 2, read_length = 8)
+generatervis::fill_fastq(patient_id, output_dir, n = 2, read_length = 8)
 ```
 
 (Optional) Plot the nucleotide sequences in the `.fastq` file in a grid format.

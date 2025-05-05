@@ -29,15 +29,15 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 #> 
 #> → Will update 1 package.
 #> → The package (0 B) is cached.
-#> + generatervis 0.1.0 → 0.1.0 👷🏽‍♂️🔧 (GitHub: 4c2d114)
+#> + generatervis 0.1.0 → 0.1.0 👷🏼‍♀️🔧 (GitHub: 2dec23a)
 #> ℹ No downloads are needed, 1 pkg is cached
-#> ✔ Got generatervis 0.1.0 (source) (45.87 kB)
+#> ✔ Got generatervis 0.1.0 (source) (45.81 kB)
 #> ℹ Packaging generatervis 0.1.0
-#> ✔ Packaged generatervis 0.1.0 (376ms)
+#> ✔ Packaged generatervis 0.1.0 (326ms)
 #> ℹ Building generatervis 0.1.0
-#> ✔ Built generatervis 0.1.0 (573ms)
-#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@4c2d114) (21ms)
-#> ✔ 1 pkg: upd 1, dld 1 (NA B) [6.6s]
+#> ✔ Built generatervis 0.1.0 (509ms)
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@2dec23a) (15ms)
+#> ✔ 1 pkg: upd 1, dld 1 (NA B) [4.9s]
 ```
 
 ## Usage
@@ -60,7 +60,7 @@ Populate the `.fastq` file with the random reads.
 
 ``` r
 output_dir <- tempdir()
-generatervis::fill_fastq(patient_id,output_dir, n = 2, read_length = 8)
+generatervis::fill_fastq(patient_id, output_dir, n = 2, read_length = 8)
 ```
 
 (Optional) Plot the nucleotide sequences in the `.fastq` file in a grid
