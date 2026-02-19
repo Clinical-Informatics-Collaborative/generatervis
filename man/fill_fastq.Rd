@@ -4,10 +4,12 @@
 \alias{fill_fastq}
 \title{Function to fill a `.fastq` file with random reads}
 \usage{
-fill_fastq(patient_id, output_dir = tempdir(), n, read_length)
+fill_fastq(patient_id, sample_id, output_dir = tempdir(), n, read_length)
 }
 \arguments{
 \item{patient_id}{A character string representing the patient ID.}
+
+\item{sample_id}{A character string representing the sample ID.}
 
 \item{output_dir}{A character string specifying the directory where the `.fastq` file will be saved.}
 
@@ -34,7 +36,7 @@ The generated reads are in `.fastq` format, which consists of four lines per rea
 }
 }
 \examples{
-# Fill a `.fastq` file for patient ID "patient_123" with 2 reads of length 8
-fill_fastq("patient_123",output_dir = tempdir(), n = 2, read_length = 8)
+# Fill a `.fastq` file for patient ID "patient_123", sample ID "smp_001" with 2 reads of length 8
+fill_fastq("patient_001", "smp_001", output_dir = tempdir(), n = 2, read_length = 8)
 
 }

@@ -4,10 +4,12 @@
 \alias{rreads}
 \title{Function to generate a random sample of reads in `.fastq` format}
 \usage{
-rreads(patient_id, n, read_length = 8)
+rreads(patient_id, sample_id, n, read_length = 8)
 }
 \arguments{
 \item{patient_id}{A character string representing the patient ID.}
+
+\item{sample_id}{A character string representing the sample ID.}
 
 \item{n}{An integer specifying the number of reads to generate.}
 
@@ -31,11 +33,13 @@ The output is formatted as a `.fastq` file, which consists of four lines per rea
  \item Line 4: Quality scores
  }
  @seealso
- \code{\link{create_empty_fastq}} for creating an empty`.fastq` file.
+ \code{\link{create_empty_fastq}} for creating an empty `.fastq` file.
 }
 \examples{
-# Generate 5 random reads for patient ID "patient_123"
-rreads("patient_123", n = 5)
-# Generate 10 random reads for patient ID "patient_456" with a read length of 12
-rreads("patient_456", n = 10, read_length = 12)
+# Generate 5 random reads for patient ID "patient_001" and sample ID
+# "smp_001"
+rreads("patient_001", "smp_001", n = 5)
+# Generate 10 random reads for patient ID "patient_001" and sample ID
+# "smp_002" with a read length of 12
+rreads("patient_001", "smp_002", n = 10, read_length = 12)
 }

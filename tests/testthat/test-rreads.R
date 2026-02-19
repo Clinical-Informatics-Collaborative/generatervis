@@ -1,9 +1,10 @@
 test_that("rreads() works", {
   # Test with a single patient ID
   patient_id <- "patient_123"
+  sample_id <- "smp_001"
   n <- 5
   read_length <- 8
-  observed <- rreads(patient_id, n, read_length)
+  observed <- rreads(patient_id, sample_id, n, read_length)
 
   # Check the number of lines in the output
   expect_equal(length(observed), n * 4)  # 4 lines per read
@@ -19,10 +20,11 @@ test_that("rreads() works", {
 
 test_that("rreads() handles different read lengths", {
   # Test with a different read length
-  patient_id <- "patient_456"
+  patient_id <- "patient_001"
+  sample_id <- "smp_002"
   n <- 3
   read_length <- 10
-  observed <- rreads(patient_id, n, read_length)
+  observed <- rreads(patient_id, sample_id, n, read_length)
 
   # Check the number of lines in the output
   expect_equal(length(observed), n * 4)  # 4 lines per read

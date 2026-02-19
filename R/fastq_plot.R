@@ -2,14 +2,17 @@
 #' @description Function to plot nucleotide sequences from a raw `.fastq` file in a grid format
 #'
 #' @param patient_id A character string representing the patient ID.
+#' @param sample_id A character string representing the sample ID.
 #' @param output_dir A character string specifying the directory where the plot file will be saved.
 #' @param n An integer specifying the number of reads to plot.
 #' @param read_length An integer specifying the length of each read. It should be a multiple of 4. Default is 8.
 #'
 #' @return NULL
 #' @examples
-#' # Plot nucleotide sequences for patient ID "patient_123" with 2 reads of length 8
-#' fastq_plot("patient_123", output_dir = tempdir(), n = 2, read_length = 8)
+#' # Plot nucleotide sequences for patient ID "patient_001" and sample ID
+#' # "smp_001" with 2 reads of length 8
+#' fastq_plot("patient_123", "smp_001", output_dir = tempdir(), n = 2,
+#' read_length = 8)
 #' @details
 #' The function reads a `.fastq` file and plots the sequences in a grid format.
 #' Each base is represented by a different color:
@@ -23,8 +26,8 @@
 #' }
 #' The plot is saved as a PNG file in the specified output directory.
 #' @export
-fastq_plot <- function(patient_id, output_dir = tempdir(), n, read_length){
-  file_name = file.path(output_dir, paste0(patient_id, ".fastq"))
+fastq_plot <- function(patient_id, sample_id, output_dir = tempdir(), n, read_length){
+  file_name = file.path(output_dir, paste0(patient_id, "_", sample_id, ".fastq"))
   read_fastq_sequences <- function(file_name, max_reads = 20) {
     lines <- readLines(file_name)
    # n_reads <- min(length(lines) %/% 4, max_reads)
@@ -69,7 +72,7 @@ fastq_plot <- function(patient_id, output_dir = tempdir(), n, read_length){
    sequences <- c("CAAACGGG","ACCTCAGG")
 
   # Create output file path
-  output_file <- file.path(output_dir, paste0("fastq_plot_",patient_id,".png"))
+  output_file <- file.path(output_dir, paste0("fastq_plot_",patient_id, "_", sample_id, ".png"))
 
   # Save the plot
   png(filename = output_file, width = 800, height = 600)

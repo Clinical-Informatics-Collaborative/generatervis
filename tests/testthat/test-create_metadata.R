@@ -11,7 +11,7 @@ test_that("create_metadata() works", {
   dir.create(output_path)
 
   # Call the function with a test patient ID
-  create_metadata(c("patient_123", "patient_456"), output_dir = output_path)
+  create_metadata(c("patient_123", "patient_123"), c("smp_001","smp_002"), output_dir = output_path)
 
   # Check if the directory was created
   expect_true(dir.exists(output_path))

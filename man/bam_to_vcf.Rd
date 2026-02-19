@@ -6,12 +6,15 @@
 \usage{
 bam_to_vcf(
   patient_id,
+  sample_id,
   output_dir = tempdir(),
-  vcf_file = paste0(output_dir, "/", patient_id, ".vcf")
+  vcf_file = paste0(output_dir, "/", patient_id, "_", sample_id, ".vcf")
 )
 }
 \arguments{
 \item{patient_id}{A character string specifying the patient ID. This will be used as the base name for the output `.vcf` file.}
+
+\item{sample_id}{A character string specifying the sample ID. This will be used as the base name for the output `.vcf` file.}
 
 \item{output_dir}{A character string specifying the directory where the `.vcf` file will be saved.}
 
@@ -37,6 +40,8 @@ The function writes the `.vcf` file to the specified path.
 \examples{
 # Convert `.bam`-like data to `.vcf` format
 patient_id <- "patient_123"
+sample_id <- "smp_001"
 output_dir <- tempdir()
-bam_to_vcf(patient_id, output_dir, vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))
+bam_to_vcf(patient_id, sample_id, output_dir, vcf_file = paste0(output_dir,
+"/", patient_id, ".vcf"))
 }

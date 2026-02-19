@@ -4,15 +4,17 @@
 \alias{create_empty_fastq}
 \title{Create an empty .fastq file using patient ID}
 \usage{
-create_empty_fastq(patient_id, output_dir = tempdir())
+create_empty_fastq(patient_id, sample_id, output_dir = tempdir())
 }
 \arguments{
 \item{patient_id}{A character vector representing the patient IDs.}
 
+\item{sample_id}{A character vector representing the sample IDs.}
+
 \item{output_dir}{A character string specifying the directory where the `.fastq` file will be saved.}
 }
 \description{
-This function creates an empty `.fastq` file with the specified patient ID.
+This function creates an empty `.fastq` file with the specified patient ID and sample ID.
 The file will contain a single entry with the patient ID as the sequence identifier.
 The sequence and quality scores will be empty
 }
@@ -26,8 +28,10 @@ The function constructs a `.fastq` file with the following format:
  }
 }
 \examples{
- # Create an empty `.fastq` file for patient ID "patient_123"
- create_empty_fastq("patient_123")
- # Create an empty `.fastq` file for patient ID "patient_456" in a specific directory
- create_empty_fastq("patient_456", output_dir = tempdir())
+# Create an empty `.fastq` file for patient ID "Patient_001" and
+#  sample ID "SMP_001"
+ create_empty_fastq("Patient_001", "SMP_001")
+# Inside a specific directory, Create an empty `.fastq` file for
+# patient ID "Patient_001" and sample ID "SMP_002"
+ create_empty_fastq("Patient_001", "SMP_002", output_dir = tempdir())
 }
