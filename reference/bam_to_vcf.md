@@ -8,8 +8,9 @@ format. It creates a dummy \`.vcf\` file with dummy data.
 ``` r
 bam_to_vcf(
   patient_id,
+  sample_id,
   output_dir = tempdir(),
-  vcf_file = paste0(output_dir, "/", patient_id, ".vcf")
+  vcf_file = paste0(output_dir, "/", patient_id, "_", sample_id, ".vcf")
 )
 ```
 
@@ -18,6 +19,11 @@ bam_to_vcf(
 - patient_id:
 
   A character string specifying the patient ID. This will be used as the
+  base name for the output \`.vcf\` file.
+
+- sample_id:
+
+  A character string specifying the sample ID. This will be used as the
   base name for the output \`.vcf\` file.
 
 - output_dir:
@@ -44,7 +50,9 @@ the specified path.
 ``` r
 # Convert `.bam`-like data to `.vcf` format
 patient_id <- "patient_123"
+sample_id <- "smp_001"
 output_dir <- tempdir()
-bam_to_vcf(patient_id, output_dir, vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))
-#> Dummy .vcf written to /tmp/RtmpmOzrPU/patient_123.vcf
+bam_to_vcf(patient_id, sample_id, output_dir, vcf_file = paste0(output_dir,
+"/", patient_id, ".vcf"))
+#> Dummy .vcf written to /tmp/RtmpQD3okl/patient_123.vcf
 ```

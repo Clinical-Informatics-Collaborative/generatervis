@@ -10,6 +10,7 @@ associated metadata files. The function creates a directory named
 ``` r
 create_metadata(
   patient_id,
+  sample_id,
   output_dir = paste0(tempdir(), "/cbioportal_study")
 )
 ```
@@ -19,6 +20,10 @@ create_metadata(
 - patient_id:
 
   A vector of patient IDs to be included in the clinical data.
+
+- sample_id:
+
+  A vector of sample IDs to be included in the mutation data.
 
 - output_dir:
 

@@ -8,7 +8,7 @@ writes them to the file.
 ## Usage
 
 ``` r
-fill_fastq(patient_id, output_dir = tempdir(), n, read_length)
+fill_fastq(patient_id, sample_id, output_dir = tempdir(), n, read_length)
 ```
 
 ## Arguments
@@ -16,6 +16,10 @@ fill_fastq(patient_id, output_dir = tempdir(), n, read_length)
 - patient_id:
 
   A character string representing the patient ID.
+
+- sample_id:
+
+  A character string representing the sample ID.
 
 - output_dir:
 
@@ -49,8 +53,9 @@ of four lines per read:
 ## Examples
 
 ``` r
-# Fill a `.fastq` file for patient ID "patient_123" with 2 reads of length 8
-fill_fastq("patient_123",output_dir = tempdir(), n = 2, read_length = 8)
-#> File already exists. Appending the new reads to the existing file.
-#> Populated /tmp/RtmpmOzrPU/patient_123.fastq with 2 reads.
+# Fill a `.fastq` file for patient ID "patient_123", sample ID "smp_001" with 2 reads of length 8
+fill_fastq("patient_001", "smp_001", output_dir = tempdir(), n = 2, read_length = 8)
+#> Creating a new `.fastq` file.
+#> Empty `.fastq` file created at: /tmp/RtmpQD3okl/patient_001_smp_001.fastq
+#> Populated /tmp/RtmpQD3okl/patient_001_smp_001.fastq with 2 reads.
 ```

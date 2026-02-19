@@ -6,7 +6,7 @@ grid format
 ## Usage
 
 ``` r
-fastq_plot(patient_id, output_dir = tempdir(), n, read_length)
+fastq_plot(patient_id, sample_id, output_dir = tempdir(), n, read_length)
 ```
 
 ## Arguments
@@ -14,6 +14,10 @@ fastq_plot(patient_id, output_dir = tempdir(), n, read_length)
 - patient_id:
 
   A character string representing the patient ID.
+
+- sample_id:
+
+  A character string representing the sample ID.
 
 - output_dir:
 
@@ -49,7 +53,9 @@ The plot is saved as a PNG file in the specified output directory.
 ## Examples
 
 ``` r
-# Plot nucleotide sequences for patient ID "patient_123" with 2 reads of length 8
-fastq_plot("patient_123", output_dir = tempdir(), n = 2, read_length = 8)
-#> Plot saved to: /tmp/RtmpmOzrPU/fastq_plot_patient_123.png
+# Plot nucleotide sequences for patient ID "patient_001" and sample ID
+# "smp_001" with 2 reads of length 8
+fastq_plot("patient_123", "smp_001", output_dir = tempdir(), n = 2,
+read_length = 8)
+#> Plot saved to: /tmp/RtmpQD3okl/fastq_plot_patient_123_smp_001.png
 ```

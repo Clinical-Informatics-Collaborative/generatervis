@@ -7,7 +7,7 @@ sequence, a separator line, and quality scores.
 ## Usage
 
 ``` r
-rreads(patient_id, n, read_length = 8)
+rreads(patient_id, sample_id, n, read_length = 8)
 ```
 
 ## Arguments
@@ -15,6 +15,10 @@ rreads(patient_id, n, read_length = 8)
 - patient_id:
 
   A character string representing the patient ID.
+
+- sample_id:
+
+  A character string representing the sample ID.
 
 - n:
 
@@ -46,34 +50,36 @@ file, which consists of four lines per read:
 
 @seealso
 [`create_empty_fastq`](https://clinical-informatics-collaborative.github.io/generatervis/reference/create_empty_fastq.md)
-for creating an empty\`.fastq\` file.
+for creating an empty \`.fastq\` file.
 
 ## Examples
 
 ``` r
-# Generate 5 random reads for patient ID "patient_123"
-rreads("patient_123", n = 5)
-#>  [1] "@patient_123_read1" "TCATACCT"           "+"                 
-#>  [4] "IIIIIIII"           "@patient_123_read2" "GATTGTAA"          
-#>  [7] "+"                  "IIIIIIII"           "@patient_123_read3"
+# Generate 5 random reads for patient ID "patient_001" and sample ID
+# "smp_001"
+rreads("patient_001", "smp_001", n = 5)
+#>  [1] "@patient_001_read1" "TCATACCT"           "+"                 
+#>  [4] "IIIIIIII"           "@patient_001_read2" "GATTGTAA"          
+#>  [7] "+"                  "IIIIIIII"           "@patient_001_read3"
 #> [10] "GTACACCG"           "+"                  "IIIIIIII"          
-#> [13] "@patient_123_read4" "CCCGTGTG"           "+"                 
-#> [16] "IIIIIIII"           "@patient_123_read5" "TGTCTAGT"          
+#> [13] "@patient_001_read4" "CCCGTGTG"           "+"                 
+#> [16] "IIIIIIII"           "@patient_001_read5" "TGTCTAGT"          
 #> [19] "+"                  "IIIIIIII"          
-# Generate 10 random reads for patient ID "patient_456" with a read length of 12
-rreads("patient_456", n = 10, read_length = 12)
-#>  [1] "@patient_456_read1"  "TGATCCACAGCT"        "+"                  
-#>  [4] "IIIIIIIIIIII"        "@patient_456_read2"  "ATTTGCTCTTAG"       
-#>  [7] "+"                   "IIIIIIIIIIII"        "@patient_456_read3" 
+# Generate 10 random reads for patient ID "patient_001" and sample ID
+# "smp_002" with a read length of 12
+rreads("patient_001", "smp_002", n = 10, read_length = 12)
+#>  [1] "@patient_001_read1"  "TGATCCACAGCT"        "+"                  
+#>  [4] "IIIIIIIIIIII"        "@patient_001_read2"  "ATTTGCTCTTAG"       
+#>  [7] "+"                   "IIIIIIIIIIII"        "@patient_001_read3" 
 #> [10] "GCAAAATAAATC"        "+"                   "IIIIIIIIIIII"       
-#> [13] "@patient_456_read4"  "AGGACGGCTCAG"        "+"                  
-#> [16] "IIIIIIIIIIII"        "@patient_456_read5"  "AGATAAAAGATG"       
-#> [19] "+"                   "IIIIIIIIIIII"        "@patient_456_read6" 
+#> [13] "@patient_001_read4"  "AGGACGGCTCAG"        "+"                  
+#> [16] "IIIIIIIIIIII"        "@patient_001_read5"  "AGATAAAAGATG"       
+#> [19] "+"                   "IIIIIIIIIIII"        "@patient_001_read6" 
 #> [22] "CGCTATTGCGCA"        "+"                   "IIIIIIIIIIII"       
-#> [25] "@patient_456_read7"  "TCACGACAGGAT"        "+"                  
-#> [28] "IIIIIIIIIIII"        "@patient_456_read8"  "GCGGTCTACCGT"       
-#> [31] "+"                   "IIIIIIIIIIII"        "@patient_456_read9" 
+#> [25] "@patient_001_read7"  "TCACGACAGGAT"        "+"                  
+#> [28] "IIIIIIIIIIII"        "@patient_001_read8"  "GCGGTCTACCGT"       
+#> [31] "+"                   "IIIIIIIIIIII"        "@patient_001_read9" 
 #> [34] "CTATATGCATTT"        "+"                   "IIIIIIIIIIII"       
-#> [37] "@patient_456_read10" "AAGTATCCGCCA"        "+"                  
+#> [37] "@patient_001_read10" "AAGTATCCGCCA"        "+"                  
 #> [40] "IIIIIIIIIIII"       
 ```

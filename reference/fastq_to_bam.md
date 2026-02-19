@@ -10,8 +10,9 @@ sequence identifiers and sequences, and creates a dummy \`.sam\` file.
 fastq_to_bam(
   fastq_file,
   patient_id,
+  sample_id,
   output_dir = tempdir(),
-  sam_file = paste0(output_dir, "/", patient_id, ".sam"),
+  sam_file = paste0(output_dir, "/", patient_id, "_", sample_id, ".sam"),
   reference = "chr1"
 )
 ```
@@ -25,6 +26,11 @@ fastq_to_bam(
 - patient_id:
 
   A character string specifying the patient ID. This will be used as the
+  base name for the output \`.sam\` file.
+
+- sample_id:
+
+  A character string specifying the sample ID. This will be used as the
   base name for the output \`.sam\` file.
 
 - output_dir:
@@ -61,11 +67,13 @@ output_dir <- tempdir()
 n <- 2
 read_length <- 8
 patient_id <- "patient_123"
-fastq_file <- file.path(output_dir, paste0(patient_id, ".fastq"))
-fill_fastq(patient_id, output_dir, n, read_length)
-#> File already exists. Appending the new reads to the existing file.
-#> Populated /tmp/RtmpmOzrPU/patient_123.fastq with 2 reads.
-sam_file <- paste0(output_dir, "/", patient_id, ".sam")
-fastq_to_bam(fastq_file, patient_id, output_dir, sam_file)
-#> Dummy .sam file written to: /tmp/RtmpmOzrPU/patient_123.sam 
+sample_id <-  "smp_001"
+fastq_file <- file.path(output_dir, paste0(patient_id, "_", sample_id, ".fastq"))
+fill_fastq(patient_id, sample_id, output_dir, n, read_length)
+#> Creating a new `.fastq` file.
+#> Empty `.fastq` file created at: /tmp/RtmpQD3okl/patient_123_smp_001.fastq
+#> Populated /tmp/RtmpQD3okl/patient_123_smp_001.fastq with 2 reads.
+sam_file <- paste0(output_dir, "/", patient_id, "_", sample_id, ".sam")
+fastq_to_bam(fastq_file, patient_id, sample_id, output_dir, sam_file)
+#> Dummy .sam file written to: /tmp/RtmpQD3okl/patient_123_smp_001.sam 
 ```

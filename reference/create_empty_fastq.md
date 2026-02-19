@@ -1,13 +1,14 @@
 # Create an empty .fastq file using patient ID
 
 This function creates an empty \`.fastq\` file with the specified
-patient ID. The file will contain a single entry with the patient ID as
-the sequence identifier. The sequence and quality scores will be empty
+patient ID and sample ID. The file will contain a single entry with the
+patient ID as the sequence identifier. The sequence and quality scores
+will be empty
 
 ## Usage
 
 ``` r
-create_empty_fastq(patient_id, output_dir = tempdir())
+create_empty_fastq(patient_id, sample_id, output_dir = tempdir())
 ```
 
 ## Arguments
@@ -15,6 +16,10 @@ create_empty_fastq(patient_id, output_dir = tempdir())
 - patient_id:
 
   A character vector representing the patient IDs.
+
+- sample_id:
+
+  A character vector representing the sample IDs.
 
 - output_dir:
 
@@ -36,10 +41,12 @@ The function constructs a \`.fastq\` file with the following format:
 ## Examples
 
 ``` r
- # Create an empty `.fastq` file for patient ID "patient_123"
- create_empty_fastq("patient_123")
-#> Empty `.fastq` file created at: /tmp/RtmpmOzrPU/patient_123.fastq
- # Create an empty `.fastq` file for patient ID "patient_456" in a specific directory
- create_empty_fastq("patient_456", output_dir = tempdir())
-#> Empty `.fastq` file created at: /tmp/RtmpmOzrPU/patient_456.fastq
+# Create an empty `.fastq` file for patient ID "Patient_001" and
+#  sample ID "SMP_001"
+ create_empty_fastq("Patient_001", "SMP_001")
+#> Empty `.fastq` file created at: /tmp/RtmpQD3okl/Patient_001_SMP_001.fastq
+# Inside a specific directory, Create an empty `.fastq` file for
+# patient ID "Patient_001" and sample ID "SMP_002"
+ create_empty_fastq("Patient_001", "SMP_002", output_dir = tempdir())
+#> Empty `.fastq` file created at: /tmp/RtmpQD3okl/Patient_001_SMP_002.fastq
 ```
