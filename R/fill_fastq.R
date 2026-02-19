@@ -35,7 +35,7 @@ fill_fastq <- function(patient_id, output_dir = tempdir(), n, read_length) {
 
   # Check if the file already exists, else create it
   if (file.exists(file_name)) {
-    message("File already exists. Appending reads to the existing file.")
+    message("File already exists. Appending the new reads to the existing file.")
   } else {
     message("Creating a new `.fastq` file.")
     create_empty_fastq(patient_id, output_dir)

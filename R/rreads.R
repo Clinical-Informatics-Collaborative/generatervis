@@ -25,7 +25,7 @@
 #'  \item Line 4: Quality scores
 #'  }
 #'  @seealso
-#'  \code{\link{create_empty_fastq}} for creating an empty `.fastq` file.
+#'  \code{\link{create_empty_fastq}} for creating an empty`.fastq` file.
 rreads <- function(patient_id, n, read_length = 8) {
   bases <- c("A", "T", "G", "C")  # Possible nucleotides
   fastq_lines <- character(4 * n)  # 4 lines per read

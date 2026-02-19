@@ -31,7 +31,7 @@ The output is formatted as a `.fastq` file, which consists of four lines per rea
  \item Line 4: Quality scores
  }
  @seealso
- \code{\link{create_empty_fastq}} for creating an empty `.fastq` file.
+ \code{\link{create_empty_fastq}} for creating an empty`.fastq` file.
 }
 \examples{
 # Generate 5 random reads for patient ID "patient_123"
