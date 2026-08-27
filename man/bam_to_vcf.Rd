@@ -2,7 +2,7 @@
 % Please edit documentation in R/bam_to_vcf.R
 \name{bam_to_vcf}
 \alias{bam_to_vcf}
-\title{Convert `.bam`-like data to `.vcf` format}
+\title{Convert `.bam`-Like Data to `.vcf` Format}
 \usage{
 bam_to_vcf(
   patient_id,

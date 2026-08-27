@@ -2,7 +2,7 @@
 % Please edit documentation in R/rreads.R
 \name{rreads}
 \alias{rreads}
-\title{Function to generate a random sample of reads in `.fastq` format}
+\title{Function to Generate a Random Sample of Reads in `.fastq` Format}
 \usage{
 rreads(patient_id, sample_id, n, read_length = 8)
 }

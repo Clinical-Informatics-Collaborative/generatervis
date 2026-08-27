@@ -1,4 +1,4 @@
-#' @title fastq_plot
+#' @title A Function to Plot Whole Genome Sequences from a Raw `.fastq` File in a Grid Format
 #' @description Function to plot nucleotide sequences from a raw `.fastq` file in a grid format
 #'
 #' @param patient_id A character string representing the patient ID.

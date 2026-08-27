@@ -2,7 +2,7 @@
 % Please edit documentation in R/fill_fastq.R
 \name{fill_fastq}
 \alias{fill_fastq}
-\title{Function to fill a `.fastq` file with random reads}
+\title{Function to Fill a `.fastq` File with Random Reads}
 \usage{
 fill_fastq(patient_id, sample_id, output_dir = tempdir(), n, read_length)
 }

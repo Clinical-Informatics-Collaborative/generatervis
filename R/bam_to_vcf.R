@@ -1,4 +1,4 @@
-#' Convert `.bam`-like data to `.vcf` format
+#' Convert `.bam`-Like Data to `.vcf` Format
 #'
 #' This function simulates the conversion of `.bam`-like data to `.vcf` format.
 #' It creates a dummy `.vcf` file with dummy data.

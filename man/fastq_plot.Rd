@@ -2,7 +2,7 @@
 % Please edit documentation in R/fastq_plot.R
 \name{fastq_plot}
 \alias{fastq_plot}
-\title{fastq_plot}
+\title{A Function to Plot Whole Genome Sequences from a Raw `.fastq` File in a Grid Format}
 \usage{
 fastq_plot(patient_id, sample_id, output_dir = tempdir(), n, read_length)
 }

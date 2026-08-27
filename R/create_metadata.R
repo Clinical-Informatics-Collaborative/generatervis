@@ -1,4 +1,4 @@
-#' Create metadata for cBioPortal study
+#' Create Metadata for cBioPortal Study
 #'
 #' This function creates a directory structure and metadata files for a cBioPortal study.
 #' It generates clinical patient data, mutation data, and associated metadata files.

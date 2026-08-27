@@ -1,4 +1,4 @@
-#' Function to generate a random sample of reads in `.fastq` format
+#' Function to Generate a Random Sample of Reads in `.fastq` Format
 #'
 #' This function generates a specified number of random reads in `.fastq` format.
 #' Each read consists of a sequence identifier, a random DNA sequence, a separator line, and quality scores.

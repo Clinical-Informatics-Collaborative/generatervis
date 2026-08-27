@@ -1,4 +1,4 @@
-#' Function to fill a `.fastq` file with random reads
+#' Function to Fill a `.fastq` File with Random Reads
 #'
 #' This function populates a `.fastq` file with random reads for a given patient ID.
 #' The function first creates an empty `.fastq` file using the patient ID,

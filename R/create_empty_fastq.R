@@ -1,4 +1,4 @@
-#' Create an empty .fastq file using patient ID
+#' Create an Empty .fastq File using Patient ID
 #'
 #' This function creates an empty `.fastq` file with the specified patient ID and sample ID.
 #' The file will contain a single entry with the patient ID as the sequence identifier.
@@ -26,7 +26,7 @@
 #'  \item Line 4: Empty quality scores
 #'  }
 create_empty_fastq <- function(patient_id, sample_id, output_dir = tempdir()) {
-  # Construct filename
+  # Construct a suitable file name
   file_name <- file.path(output_dir, paste0(patient_id, "_", sample_id, ".fastq"))
 
   # Content for an empty `.fastq` entry

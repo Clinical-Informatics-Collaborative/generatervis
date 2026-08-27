@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_metadata.R
 \name{create_metadata}
 \alias{create_metadata}
-\title{Create metadata for cBioPortal study}
+\title{Create Metadata for cBioPortal Study}
 \usage{
 create_metadata(
   patient_id,

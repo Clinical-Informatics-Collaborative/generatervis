@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_empty_fastq.R
 \name{create_empty_fastq}
 \alias{create_empty_fastq}
-\title{Create an empty .fastq file using patient ID}
+\title{Create an Empty .fastq File using Patient ID}
 \usage{
 create_empty_fastq(patient_id, sample_id, output_dir = tempdir())
 }
