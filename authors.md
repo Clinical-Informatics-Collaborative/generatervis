@@ -6,6 +6,9 @@
 
 ## Citation
 
+Source:
+[`DESCRIPTION`](https://github.com/Clinical-Informatics-Collaborative/generatervis/blob/main/DESCRIPTION)
+
 c\) (2026). *generatervis: Generate and Visualise Synthetic Whole Genome
 Sequence Data*. R package version 0.1.0,
 <https://clinical-informatics-collaborative.github.io/generatervis/>.

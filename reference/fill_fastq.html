@@ -24,6 +24,7 @@ and writes them to the file."></head><body>
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/Clinical-Informatics-Collaborative/generatervis/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -33,7 +34,7 @@ and writes them to the file."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Function to Fill a `.fastq` File with Random Reads</h1>
-
+      <small class="dont-index">Source: <a href="https://github.com/Clinical-Informatics-Collaborative/generatervis/blob/main/R/fill_fastq.R" class="external-link"><code>R/fill_fastq.R</code></a></small>
       <div class="d-none name"><code>fill_fastq.Rd</code></div>
     </div>
 
@@ -89,8 +90,8 @@ The generated reads are in `.fastq` format, which consists of four lines per rea
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Fill a `.fastq` file for patient ID "patient_123", sample ID "smp_001" with 2 reads of length 8</span></span></span>
 <span class="r-in"><span><span class="fu">fill_fastq</span><span class="op">(</span><span class="st">"patient_001"</span>, <span class="st">"smp_001"</span>, output_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">2</span>, read_length <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Creating a new `.fastq` file.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Empty `.fastq` file created at: /tmp/Rtmp63aPMj/patient_001_smp_001.fastq</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Populated /tmp/Rtmp63aPMj/patient_001_smp_001.fastq with 2 reads.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Empty `.fastq` file created at: /tmp/RtmpY8wkvH/patient_001_smp_001.fastq</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Populated /tmp/RtmpY8wkvH/patient_001_smp_001.fastq with 2 reads.</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

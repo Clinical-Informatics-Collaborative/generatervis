@@ -22,6 +22,7 @@ The sequence and quality scores will be empty"></head><body>
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/Clinical-Informatics-Collaborative/generatervis/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -31,7 +32,7 @@ The sequence and quality scores will be empty"></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Create an Empty .fastq File using Patient ID</h1>
-
+      <small class="dont-index">Source: <a href="https://github.com/Clinical-Informatics-Collaborative/generatervis/blob/main/R/create_empty_fastq.R" class="external-link"><code>R/create_empty_fastq.R</code></a></small>
       <div class="d-none name"><code>create_empty_fastq.Rd</code></div>
     </div>
 
@@ -75,11 +76,11 @@ The sequence and quality scores will be empty</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Create an empty `.fastq` file for patient ID "Patient_001" and</span></span></span>
 <span class="r-in"><span><span class="co">#  sample ID "SMP_001"</span></span></span>
 <span class="r-in"><span> <span class="fu">create_empty_fastq</span><span class="op">(</span><span class="st">"Patient_001"</span>, <span class="st">"SMP_001"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Empty `.fastq` file created at: /tmp/Rtmp63aPMj/Patient_001_SMP_001.fastq</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Empty `.fastq` file created at: /tmp/RtmpY8wkvH/Patient_001_SMP_001.fastq</span>
 <span class="r-in"><span><span class="co"># Inside a specific directory, Create an empty `.fastq` file for</span></span></span>
 <span class="r-in"><span><span class="co"># patient ID "Patient_001" and sample ID "SMP_002"</span></span></span>
 <span class="r-in"><span> <span class="fu">create_empty_fastq</span><span class="op">(</span><span class="st">"Patient_001"</span>, <span class="st">"SMP_002"</span>, output_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Empty `.fastq` file created at: /tmp/Rtmp63aPMj/Patient_001_SMP_002.fastq</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Empty `.fastq` file created at: /tmp/RtmpY8wkvH/Patient_001_SMP_002.fastq</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
