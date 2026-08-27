@@ -19,15 +19,10 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 #> 
 #> → Will update 1 package.
 #> → The package (0 B) is cached.
-#> + generatervis 0.1.0 → 0.1.0 👷🏾‍♀️🔧 (GitHub: 8969561)
+#> + generatervis 0.1.0 → 0.1.0 👷🏼‍♀️🔧 (GitHub: 4dca20a)
 #> ℹ No downloads are needed, 1 pkg is cached
-#> ✔ Got generatervis 0.1.0 (source) (59.47 kB)
-#> ℹ Packaging generatervis 0.1.0
-#> ✔ Packaged generatervis 0.1.0 (650ms)
-#> ℹ Building generatervis 0.1.0
-#> ✔ Built generatervis 0.1.0 (934ms)
-#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@8969561) (26ms)
-#> ✔ 1 pkg: upd 1, dld 1 (NA B) [7.7s]
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@4dca20a) (32ms)
+#> ✔ 1 pkg: upd 1 [4.2s]
 ```
 
 ## Usage
