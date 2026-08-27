@@ -13,6 +13,7 @@ You can install the development version of `generatervis` from
 [GitHub](https://github.com/) with
 
 ``` r
+
 # install.packages("pak")  
 pak::pak("Clinical-Informatics-Collaborative/generatervis")  
 #> 
@@ -29,6 +30,7 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 Create an empty raw `.fastq` file for the specified patient.
 
 ``` r
+
 patient_id <- "patient_123"
 generatervis::create_empty_fastq(patient_id)
 ```
@@ -37,6 +39,7 @@ Generate a random sample of `reads` for a Whole Genome Sequencing (WGS)
 dataset for the specified patient ID.
 
 ``` r
+
 n <- 2
 generatervis::rreads(patient_id, n)
 ```
@@ -44,6 +47,7 @@ generatervis::rreads(patient_id, n)
 Populate the `.fastq` file with the random reads.
 
 ``` r
+
 output_dir <- tempdir()
 read_length <- 8
 generatervis::fill_fastq(patient_id, output_dir, n, read_length)
@@ -53,6 +57,7 @@ generatervis::fill_fastq(patient_id, output_dir, n, read_length)
 format.
 
 ``` r
+
 generatervis::fastq_plot(patient_id, output_dir, n, read_length)
 ```
 
@@ -60,6 +65,7 @@ Convert the (raw) `.fastq` file to a (processed) `.bam` file using a
 dummy `.sam` format.
 
 ``` r
+
 fastq_file <- file.path(output_dir, paste0(patient_id, ".fastq"))
 generatervis::fill_fastq(patient_id, output_dir, n, read_length)
 generatervis::fastq_to_bam(fastq_file, patient_id, output_dir, sam_file = paste0(output_dir, "/", patient_id, ".sam"), reference = "chr1")
@@ -76,6 +82,7 @@ Convert the (processed) `.bam` file to a (summarised) `.vcf` file
 format.
 
 ``` r
+
 generatervis::bam_to_vcf(patient_id, output_dir, vcf_file = paste0(output_dir, "/", patient_id, ".vcf"))
 ```
 
@@ -83,6 +90,7 @@ Create the metadata files to upload to
 [`data_storage_repository`](https://github.com/Clinical-Informatics-Collaborative/data_storage_portal)
 
 ``` r
+
 generatervis::create_metadata(patient_id, output_dir)
 ```
 
@@ -103,6 +111,7 @@ website:
 For in-session help:
 
 ``` r
+
 # View documentation for a specific function
 ?create_empty_fastq
 ```
@@ -117,7 +126,9 @@ To be added.
 
 ## License
 
-To be added.
+This code has the [MIT
+license](https://github.com/Clinical-Informatics-Collaborative/generatervis/blob/main/LICENSE.md)
+associated with it.
 
 ## Citation
 
