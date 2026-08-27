@@ -128,7 +128,7 @@ To be added.
 
 ## License
 
-To be added.
+This code has the [MIT license](https://github.com/Clinical-Informatics-Collaborative/generatervis/blob/main/LICENSE.md) associated with it.
 
 ## Citation
 
