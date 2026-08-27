@@ -44,9 +44,9 @@ The function constructs a \`.fastq\` file with the following format:
 # Create an empty `.fastq` file for patient ID "Patient_001" and
 #  sample ID "SMP_001"
  create_empty_fastq("Patient_001", "SMP_001")
-#> Empty `.fastq` file created at: /tmp/RtmpY8wkvH/Patient_001_SMP_001.fastq
+#> Empty `.fastq` file created at: /tmp/RtmptWKVdu/Patient_001_SMP_001.fastq
 # Inside a specific directory, Create an empty `.fastq` file for
 # patient ID "Patient_001" and sample ID "SMP_002"
  create_empty_fastq("Patient_001", "SMP_002", output_dir = tempdir())
-#> Empty `.fastq` file created at: /tmp/RtmpY8wkvH/Patient_001_SMP_002.fastq
+#> Empty `.fastq` file created at: /tmp/RtmptWKVdu/Patient_001_SMP_002.fastq
 ```
