@@ -8,7 +8,8 @@
 [![R-CMD-check](https://github.com/Clinical-Informatics-Collaborative/generatervis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Clinical-Informatics-Collaborative/generatervis/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/Clinical-Informatics-Collaborative/generatervis/graph/badge.svg)](https://app.codecov.io/gh/Clinical-Informatics-Collaborative/generatervis)
-
+[![Codecov test
+coverage](https://codecov.io/gh/Clinical-Informatics-Collaborative/generatervis/graph/badge.svg)](https://app.codecov.io/gh/Clinical-Informatics-Collaborative/generatervis)
 <!-- badges: end -->
 
 ## Overview
@@ -29,10 +30,15 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 #> 
 #> → Will update 1 package.
 #> → The package (0 B) is cached.
-#> + generatervis 0.1.0 → 0.1.0 👷🏼‍♂️🔧 (GitHub: 510189b)
+#> + generatervis 0.1.0 → 0.1.0 👷🏾‍♀️🔧 (GitHub: 8969561)
 #> ℹ No downloads are needed, 1 pkg is cached
-#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@510189b) (21ms)
-#> ✔ 1 pkg: upd 1 [3.5s]
+#> ✔ Got generatervis 0.1.0 (source) (59.47 kB)
+#> ℹ Packaging generatervis 0.1.0
+#> ✔ Packaged generatervis 0.1.0 (650ms)
+#> ℹ Building generatervis 0.1.0
+#> ✔ Built generatervis 0.1.0 (934ms)
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@8969561) (26ms)
+#> ✔ 1 pkg: upd 1, dld 1 (NA B) [7.7s]
 ```
 
 ## Usage
