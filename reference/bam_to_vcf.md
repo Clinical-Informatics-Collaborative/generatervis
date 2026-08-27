@@ -1,4 +1,4 @@
-# Convert \`.bam\`-like data to \`.vcf\` format
+# Convert \`.bam\`-Like Data to \`.vcf\` Format
 
 This function simulates the conversion of \`.bam\`-like data to \`.vcf\`
 format. It creates a dummy \`.vcf\` file with dummy data.
@@ -54,5 +54,5 @@ sample_id <- "smp_001"
 output_dir <- tempdir()
 bam_to_vcf(patient_id, sample_id, output_dir, vcf_file = paste0(output_dir,
 "/", patient_id, ".vcf"))
-#> Dummy .vcf written to /tmp/RtmpkX7DBW/patient_123.vcf
+#> Dummy .vcf written to /tmp/RtmpOkzeBj/patient_123.vcf
 ```

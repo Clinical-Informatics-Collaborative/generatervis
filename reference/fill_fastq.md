@@ -1,4 +1,4 @@
-# Function to fill a \`.fastq\` file with random reads
+# Function to Fill a \`.fastq\` File with Random Reads
 
 This function populates a \`.fastq\` file with random reads for a given
 patient ID. The function first creates an empty \`.fastq\` file using
@@ -56,6 +56,6 @@ of four lines per read:
 # Fill a `.fastq` file for patient ID "patient_123", sample ID "smp_001" with 2 reads of length 8
 fill_fastq("patient_001", "smp_001", output_dir = tempdir(), n = 2, read_length = 8)
 #> Creating a new `.fastq` file.
-#> Empty `.fastq` file created at: /tmp/RtmpkX7DBW/patient_001_smp_001.fastq
-#> Populated /tmp/RtmpkX7DBW/patient_001_smp_001.fastq with 2 reads.
+#> Empty `.fastq` file created at: /tmp/RtmpOkzeBj/patient_001_smp_001.fastq
+#> Populated /tmp/RtmpOkzeBj/patient_001_smp_001.fastq with 2 reads.
 ```

@@ -19,10 +19,10 @@ pak::pak("Clinical-Informatics-Collaborative/generatervis")
 #> 
 #> → Will update 1 package.
 #> → The package (0 B) is cached.
-#> + generatervis 0.1.0 → 0.1.0 👷🏻‍♀️🔧 (GitHub: 52ae6e5)
+#> + generatervis 0.1.0 → 0.1.0 👷🏼‍♂️🔧 (GitHub: 510189b)
 #> ℹ No downloads are needed, 1 pkg is cached
-#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@52ae6e5) (22ms)
-#> ✔ 1 pkg: upd 1 [2.6s]
+#> ✔ Installed generatervis 0.1.0 (github::Clinical-Informatics-Collaborative/generatervis@510189b) (21ms)
+#> ✔ 1 pkg: upd 1 [3.5s]
 ```
 
 ## Usage
@@ -126,9 +126,8 @@ To be added.
 
 ## License
 
-This code has the [MIT
-license](https://github.com/Clinical-Informatics-Collaborative/generatervis/blob/main/LICENSE.md)
-associated with it.
+The license associated with this code is the [MIT
+license](https://github.com/Clinical-Informatics-Collaborative/generatervis/blob/main/LICENSE.md).
 
 ## Citation
 
