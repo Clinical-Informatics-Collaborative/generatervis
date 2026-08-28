@@ -57,5 +57,5 @@ The plot is saved as a PNG file in the specified output directory.
 # "smp_001" with 2 reads of length 8
 fastq_plot("patient_123", "smp_001", output_dir = tempdir(), n = 2,
 read_length = 8)
-#> Plot saved to: /tmp/RtmpzVO8Ki/fastq_plot_patient_123_smp_001.png
+#> Plot saved to: /tmp/RtmpOkQQRI/fastq_plot_patient_123_smp_001.png
 ```

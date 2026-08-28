@@ -71,9 +71,9 @@ sample_id <-  "smp_001"
 fastq_file <- file.path(output_dir, paste0(patient_id, "_", sample_id, ".fastq"))
 fill_fastq(patient_id, sample_id, output_dir, n, read_length)
 #> Creating a new `.fastq` file.
-#> Empty `.fastq` file created at: /tmp/RtmpzVO8Ki/patient_123_smp_001.fastq
-#> Populated /tmp/RtmpzVO8Ki/patient_123_smp_001.fastq with 2 reads.
+#> Empty `.fastq` file created at: /tmp/RtmpOkQQRI/patient_123_smp_001.fastq
+#> Populated /tmp/RtmpOkQQRI/patient_123_smp_001.fastq with 2 reads.
 sam_file <- paste0(output_dir, "/", patient_id, "_", sample_id, ".sam")
 fastq_to_bam(fastq_file, patient_id, sample_id, output_dir, sam_file)
-#> Dummy .sam file written to: /tmp/RtmpzVO8Ki/patient_123_smp_001.sam 
+#> Dummy .sam file written to: /tmp/RtmpOkQQRI/patient_123_smp_001.sam 
 ```

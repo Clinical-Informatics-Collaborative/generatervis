@@ -2,6 +2,9 @@
 
 ## Authors
 
+- **c)**. Author.  
+  "aut", "cre"
+
 - **Jyoti Bhogal**. Maintainer.
 
 ## Citation
