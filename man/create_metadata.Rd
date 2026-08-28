@@ -18,9 +18,12 @@ create_metadata(
 \item{output_dir}{The directory where the metadata files will be created. Default is "/cbioportal_study" in the `tempdir()`.}
 }
 \description{
-This function creates a directory structure and metadata files for a cBioPortal study.
-It generates clinical patient data, mutation data, and associated metadata files.
-The function creates a directory named "cbioportal_study" and writes the following files:
+This function creates a directory structure and metadata files for a
+cBioPortal study.
+It generates clinical patient data, mutation data, and associated metadata
+files.
+The function creates a directory named "cbioportal_study" and writes the
+following files:
 }
 \details{
 - data_clinical_patient.txt: Contains clinical patient data.
