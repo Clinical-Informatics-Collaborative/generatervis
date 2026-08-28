@@ -2,8 +2,13 @@ Package: generatervis
 Type: Package
 Title: Generate and Visualise Synthetic Whole Genome Sequence Data
 Version: 0.1.0
-Author: c(person("Jyoti", "Bhogal", "bhogaljyoti1@gmail.com", role = c("aut", "cre"))
-Maintainer: Jyoti Bhogal <bhogaljyoti1@gmail.com>
+Authors@R: c(person(family = "c)",
+                    role = "aut",
+                    comment = "\"aut\", \"cre\""),
+              person(given = "Jyoti",
+                    family = "Bhogal",
+                    role = "cre",
+                    email = "bhogaljyoti1@gmail.com"))
 Description: Generate and visualise synthetic Whole Genome Sequence data
     This package provides a research data management workflow to create synthetic Whole Genome Sequence clinical data.
 License: MIT + file LICENSE
